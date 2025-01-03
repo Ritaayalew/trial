@@ -1,0 +1,160 @@
+
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.01s ease;
+}
+.modal-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* Ensure it is above other content */
+    display: none; /* Hidden by default */
+}
+.navbar-link {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Change this to your desired font family */
+    font-size: 13px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the font bold */
+    color: #000; /* Set the text color */
+}
+.btnn{
+left: 0; 
+top: 200px;
+ width: 100px; 
+ margin-left: 150px;
+ font-family: 'Chalkboard SE', 'Comic Sans MS', cursive;
+}
+.logo {
+    border-radius: 50%;
+    height: 50px;
+}
+.header {
+    background-image: url('photos/image5 (2).jpg'); /* Replace with your image path */
+    background-size: contain; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    width: 100%; /* Ensure full width */
+    height: 90vh; /* Set height to 90% of the viewport */
+    position: relative; 
+    margin-top: 0px;
+    color: white; /* Change text color for better visibility */
+    z-index: 2; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+*{
+padding: 0;
+margin: 0;
+}
+.content-box{ 
+    display: flex;
+    justify-content: space-between;
+    padding:20px 15px;
+}
+.content-box p {
+     width: 400px;
+    border-radius: 10px;
+    font-family:fantasy; color:rgb(5, 75, 5); padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(55, 109, 76, 0.1); 
+    font-size: 14px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
+    0px 0px 15px rgba(17, 99, 52, 0.5),
+    0px 0px 25px rgba(141, 198, 166, 0.5);
+}
+.container h3{
+    font-family:fantasy; font-weight: 700;  
+    font-size: 20px; color:rgb(9, 159, 9); 
+    padding: 10px;
+}
+.container h5{
+    color: green;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+.icons {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+   
+    border-radius: 10px; 
+    padding: 10px;        
+    background-color: #d1d2d4; 
+    margin-left: 130px;
+}
+.icons img{
+    width: 30px;
+    border-radius: 50%;
+    /* margin-left: 10px; */
+}
+.p2{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
+    0px 0px 15px rgba(17, 99, 52, 0.5),
+    0px 0px 25px rgba(141, 198, 166, 0.5);
+}
+.navv{
+    display: none;
+}
+.images img {
+width: 200px;
+
+margin: 10px; 
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
+0px 0px 15px rgba(17, 99, 52, 0.5),
+0px 0px 25px rgba(141, 198, 166, 0.5);
+}
+@media (max-width: 480px) {
+    .content-box {
+        flex-direction: column; 
+        text-align: center; /* Center text */
+        padding: 20px; /* Add padding for better spacing */
+        box-sizing: border-box; 
+    }
+    .content-box p{
+        width: 100%;
+    }
+    .images{
+        flex-direction: column;
+        
+    }
+    .images img{
+        width: 70%;
+        margin-left: 50px;
+    }
+    .heading{
+        flex-direction: column;
+    }
+    .navbar-link li{
+        padding-top: 15px;
+        font-size: 10.5px;
+    }
+    /* .navbar-link li{
+        display: none; 
+    } 
+    .navv{
+        display: block;
+    } */
+    .navv img{
+        width: 30px;
+        position: fixed;
+        margin-left: 10px;
+    }
+    .container h3{
+        font-family:fantasy; font-weight: 700;  
+        font-size: 17px; color:rgb(9, 159, 9); 
+
+    }
+    .container h5{
+        font-size: 15px;
+    }
+    .header {
+        height: 70vh; 
+    }
+    
+    .header button {
+        width: 40%; 
+        margin-top: 70px;
+    }
+
+}

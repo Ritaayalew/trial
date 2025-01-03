@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="/trial/charity_system_frontend/node_modules/bootstrap/css/bootstrap.min.css">
+    
+</head>
+<style>
+    .navbar {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 50px; /* Adjust based on header height */
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 200px; /* Width of the sidebar */
+    z-index: 1000;
+}
+
+.navbar.expanded {
+    display: block; /* Display as a column when expanded */
+}
+</style>
+<body>
+    
+<main class="d-flex flex-column">
+   
+    <div class=" header  bg-dark p-1">
+        
+        <div class="heading d-flex justify-content-between align-items-center">
+            <div class=" d-flex justify-content-between align-items-center"><img class="logo ms-5" src="enredada.jpg" alt="Logo" ><h4 
+                style="font-family: Clicker Script, serif;; font-weight: 800;">Enredada</h4></div>
+            <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
+                <li class="me-3"><a href="#" class="text-decoration-none text-white">Home</a></li>
+                <li class="me-3"><a href="#" class="text-decoration-none text-white">Shop</a></li>
+                <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="signup()">Volunteer</a></li>
+                <li class="me-3"><a href="#" class="text-decoration-none text-white">Admin-Dashboard</a></li>
+                <li class="me-3"><a href="#" class="text-decoration-none text-white border rounded bg-success "  style="width: 150px;">Login</a></li>
+              
+            </ul>
+        </div>
+        <!-- <div class="navv text-light" onclick="toggleSidebar()">
+            <img src="photos/burger.png" alt="Menu">
+        </div>
+        -->
+        <div class="position-relative" style="height: 200px;"> <!-- Create a container to position the button -->
+            <h3 class="text-white font-weight-bold ms-3 my-4" style="font-family: 'Papyrus', 'Comic Sans MS', cursive;">Honor for the Elders!</h3>
+            <button class="btn btn-success p-1 rounded position-absolute text-bold">Donate Now</button>
+        </div>
+    </div>
+    <div class="container">
+        <h3><b>Welcome to Enredada Elders People Association</b></h3>
+        <div class="content-box">
+           
+            <p>At Enredada Elders People Association, we are dedicated to improving the lives of elderly individuals who lack supportive relatives. 
+                Our mission is to provide comprehensive assistance to seniors, ensuring they receive the care, companionship, and essential services they deserve.</p>
+            <p>We offer a range of programs designed to meet the diverse needs of our elderly community. 
+                From providing nutritious meals and health services to organizing social activities and companionship programs, our dedicated team works tirelessly
+                to create a nurturing environment for those in need. We understand that every elder is unique, and we strive to tailor our services to fit their individual requirements.</p></div>
+                <h5>Let us build a stronger, more caring community for all our elders!</h5>
+                <div class="images d-flex justify-content-center ">
+                    <img src="photos/elder1.jpg" alt="Telegram Icon">
+                    <img src="photos/elder2.jpg" alt="Icon 2">
+                    <img src="photos/elder3.jpg" alt="image4">
+                    <img src="photos/elder4.jpg" alt="image4">
+                    
+                </div>
+                <h5>We cannot achieve this mission alone.</h5>
+            <div class="p2 " style="font-family:fantasy; color:rgb(3, 72, 3); padding: 10px;" style="border-radius: 30px;"><p>We invite everyone in the community to join us in our efforts to support our elders. Your generosity can make a significant difference in their lives.
+                Whether through donations of essential items, volunteering your time, or spreading the word about our cause, every contribution counts. Together, 
+                we can provide the necessities and companionship that our elders need to live with dignity and joy.</p>
+           
+        </div>
+        <h5> Thank you for your support!</h5>
+    </div>
+    
+        <div class="icons">
+            <img src="photos/telegram.jpg" alt="Telegram Icon">
+            <img src="photos/Untitled.png" alt="Icon 2">
+            <img src="photos/yahoo.png" alt="Yahoo Icon">
+        </div>
+    </div>
+    
+    </main>
+    <div class="container mt-5">
+         <div id="signupForm" class="modal-form bg-white p-4 rounded">
+            <div class=" active form-group">
+                <h2 class="text-center">Sign Up</h2>
+                <label for="username">Username</label>
+                <input type="text" class="form-control custom-size" id="username"placeholder="Enter your name"  required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control custom-size" id="email" placeholder="Enter email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control custom-size" id="password" placeholder="Password" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control custom-size" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+    
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+            </div>
+            <div class="p-100">
+
+            </div>
+            <button type="submit" class="btn btn-success">Sign Up</button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+        </div>
+    </div>
+    
+   
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Learn more about our mission and vision.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Shop</a></li>
+                    <li><a href="#" class="text-white">Volunteer</a></li>
+                    <li><a href="#" class="text-white">admindashboard</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <ul class="list-unstyled d-flex ">
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="home.js">
+function toggleSidebar() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("expanded");
+}
+
+</script>
+</body>
+</html>
