@@ -4,33 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="/trial/charity_system_frontend/node_modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./home.css">
     
 </head>
-<style>
-    .navbar {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 50px; /* Adjust based on header height */
-    left: 0;
-    background: rgba(0, 0, 0, 0.9);
-    width: 200px; /* Width of the sidebar */
-    z-index: 1000;
-}
 
-.navbar.expanded {
-    display: block; /* Display as a column when expanded */
-}
-</style>
 <body>
     
 <main class="d-flex flex-column">
    
     <div class=" header  bg-dark p-1">
         
-        <div class="heading d-flex justify-content-between align-items-center">
+        <div class="heading ">
             <div class=" d-flex justify-content-between align-items-center"><img class="logo ms-5" src="enredada.jpg" alt="Logo" ><h4 
                 style="font-family: Clicker Script, serif;; font-weight: 800;">Enredada</h4></div>
             <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
@@ -42,18 +27,14 @@
               
             </ul>
         </div>
-        <!-- <div class="navv text-light" onclick="toggleSidebar()">
-            <img src="photos/burger.png" alt="Menu">
-        </div>
-        -->
-        <div class="position-relative" style="height: 200px;"> <!-- Create a container to position the button -->
+        <div class="position-relative" style="height: 200px;"> 
             <h3 class="text-white font-weight-bold ms-3 my-4" style="font-family: 'Papyrus', 'Comic Sans MS', cursive;">Honor for the Elders!</h3>
             <button class="btn btn-success p-1 rounded position-absolute text-bold">Donate Now</button>
         </div>
     </div>
     <div class="container">
         <h3><b>Welcome to Enredada Elders People Association</b></h3>
-        <div class="content-box">
+        <div class="content-box ">
            
             <p>At Enredada Elders People Association, we are dedicated to improving the lives of elderly individuals who lack supportive relatives. 
                 Our mission is to provide comprehensive assistance to seniors, ensuring they receive the care, companionship, and essential services they deserve.</p>
@@ -121,7 +102,7 @@
     </div>
     
    
-<footer class="bg-dark text-white py-4">
+<footer class="bg-dark text-white py-4 d-flex justify-content-center  ">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -137,25 +118,14 @@
                     <li><a href="#" class="text-white">admindashboard</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5>Follow Us</h5>
-                <ul class="list-unstyled d-flex ">
-                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
-                    <li class="me-3"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
+            
         </div>
         <div class="text-center mt-3">
             <p>&copy; 2025 Your Company. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
-<script src="home.js">
-function toggleSidebar() {
-    const navbar = document.getElementById("navbar");
-    navbar.classList.toggle("expanded");
-}
+<script src="./home.js">
 
 </script>
 </body>
