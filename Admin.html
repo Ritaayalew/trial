@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Management</title>
+    <link rel="stylesheet" href="Admin.css" />
+  </head>
+  <body>
+    <header>
+      <button class="donate-btn">Donate Now</button>
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Admin Dashboard</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <div class="dropdown">
+        <button class="dropbtn">Add Product</button>
+        <div class="dropdown-content">
+          <form>
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" />
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" />
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Remove Product</button>
+        <div class="dropdown-content">
+          <form>
+            <label for="product">Select Product:</label>
+            <select id="product" name="product">
+              <option value="product1">Product 1</option>
+              <option value="product2">Product 2</option>
+            </select>
+            <button type="submit">Remove</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Update Product</button>
+        <div class="dropdown-content">
+          <form>
+            <label for="update-product">Select Product:</label>
+            <select id="update-product" name="update-product">
+              <option value="product1">Product 1</option>
+              <option value="product2">Product 2</option>
+            </select>
+            <label for="new-name">New Product Name:</label>
+            <input type="text" id="new-name" name="new-name" />
+            <label for="new-price">New Price:</label>
+            <input type="text" id="new-price" name="new-price" />
+            <label for="new-description">New Description:</label>
+            <textarea id="new-description" name="new-description"></textarea>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
