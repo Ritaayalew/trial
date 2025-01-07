@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>profile page</title>
+  <link rel="stylesheet" href="volunteer-profile.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+  <div class=" header  bg-dark p-1">
+        
+    <div class="heading ">
+        <div class=" d-flex justify-content-between align-items-center"><img class="logo ms-5" src="enredada.jpg" alt="Logo" ><h4 
+            style="font-family: Clicker Script, serif;; font-weight: 800;">Enredada</h4></div>
+        <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
+            <li class="me-3"><a href="#" class="text-decoration-none text-white">Home</a></li>
+            <li class="me-3"><a href="#" class="text-decoration-none text-white">Shop</a></li>
+            <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="signup()">Volunteer</a></li>
+            <li class="me-3"><a href="volunteer-profile.html" class="text-decoration-none text-white">profile</a></li>
+            <li class="me-3"><a href="#" class="text-decoration-none text-white">Admin-Dashboard</a></li>
+            <li class="me-3"><a href="#" class="text-decoration-none text-white border rounded bg-success "  style="width: 150px;">Login</a></li>
+          
+        </ul>
+    </div>
+</div>
+<button type="button" class="btn btn-success custom-margin-right float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  EDIT PROFILE
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">EDIT PROFILE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+<div class="modal-body">
+    <form class="row g-3" id="editProfileForm">
+        <div class="col-12">
+            <label for="firstName" class="form-label">FIRST NAME</label>
+            <input type="text" class="form-control" id="firstName" placeholder="enter your first name">
+        </div>
+        <div class="col-12">
+            <label for="lastName" class="form-label">LAST NAME</label>
+            <input type="text" class="form-control" id="lastName" placeholder="enter your last name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="enter your Address">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">GENDER</label>
+            <select id="inputState" class="form-select">
+                <option selected>FEMALE</option>
+                <option>MALE</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="saveChangesButton">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card mb-3 card-large custom-margin-right" >
+    <div class="row g-0">
+        <div class="col-md-4">
+          <div class="d-flex flex-column h-100">
+            <img src="pp.jpg" class="img-fluid rounded-start" alt="profile picture">
+            <p class="text-center fs-2 custom-name mb-0">John Smith</p> 
+            <p class="fw-light text-center fs-6 mb-0"><a class="email" href="">johnsmith@gmail.com</a></p> 
+        </div>
+        
+        </div>
+        <div class="col-md-8">
+            <div class="card-body card-align">
+                <p class="card-text fw-bolder"> <samp class="samp">NAME: </samp> John Smith</p>
+                <p class="card-text fw-bolder"> <samp class="samp">EMAIL: </samp> <a class="email" href="">johnsmith@gmail.com</a></p>
+                <p class="card-text fw-bolder"> <samp class="samp">CREATED: </samp> December 20 2024</p>
+                <p class="card-text fw-bolder"> <samp class="samp">LAST LOGIN: </samp> January 1 2025</p>
+                <p class="card-text fw-bolder"> <samp class="samp">GENDER: </samp> Male</p>
+                <p class="card-text fw-light email-notification"> Recive email notification?</p>
+                <button type="button" class="btn btn-sm btn-success yes-button" >YES</button>
+                <button type="button" class="btn btn-secondary btn-sm" >NO</button>
+            </div>
+        </div>
+        
+    </div>
+  </div>
+  <footer class="bg-dark text-white py-4 d-flex justify-content-center  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Learn more about our mission and vision.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Shop</a></li>
+                    <li><a href="#" class="text-white">Volunteer</a></li>
+                    <li><a href="#" class="text-white">admindashboard</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="text-center mt-3">
+            <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="style.js"></script>
+</body>
+</html>
