@@ -10,6 +10,9 @@
   display: flex;
   justify-content: space-between;
 }
+.container .row{
+  width: 100%;
+}
 
 .navbar-link {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Change this to your desired font family */
