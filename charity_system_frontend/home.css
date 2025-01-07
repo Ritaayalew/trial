@@ -12,18 +12,53 @@
     justify-content: space-between;
 }
 .modal-form {
+    color: #000000;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1050; /* Ensure it is above other content */
-    display: none; /* Hidden by default */
+    z-index: 1050; 
+    display: none; 
+    border-radius: 30%;
+    width: 350px;
+    height: 90vh;
+    background-color: rgb(235, 239, 242);
+}
+.modal-form input{
+    height: 28px;
+}
+.modal-loginform{
+    color: #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; 
+    display: none; 
+    border-radius: 30%;
+    width: 350px;
+   
+}
+.modal-adminform{
+    color: #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+       
+    transform: translate(-50%, -50%);
+    z-index: 1050; 
+    display: none; 
+    border-radius: 30%;
+    width: 350px;
+   
+
 }
 .navbar-link {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Change this to your desired font family */
-    font-size: 13px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the font bold */
-    color: #000; /* Set the text color */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #000; 
 }
 
 .logo {
@@ -31,15 +66,15 @@
     height: 50px;
 }
 .header {
-    background-image: url('photos/image5 (2).jpg'); /* Replace with your image path */
-    background-size: contain; /* Ensure the entire image is visible */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the image */
-    width: 100%; /* Ensure full width */
-    height: 90vh; /* Set height to 90% of the viewport */
+    background-image: url('photos/image5 (2).jpg'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    width: 100%; 
+    height: 90vh;
     position: relative; 
     margin-top: 0px;
-    color: white; /* Change text color for better visibility */
+    color: white; 
     z-index: 2; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
 }
@@ -85,7 +120,6 @@
 .icons img{
     width: 30px;
     border-radius: 50%;
-    /* margin-left: 10px; */
 }
 .p2{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
@@ -103,6 +137,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
 0px 0px 15px rgba(17, 99, 52, 0.5),
 0px 0px 25px rgba(141, 198, 166, 0.5);
 }
+
 @media (max-width: 480px) {
     .content-box {
         flex-direction: column; 
@@ -135,6 +170,15 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
         transform: translate(-50%, -50%);
         z-index: 1050; /* Ensure it is above other content */
         display: none; /* Hidden by default */
+    }
+    .modal-loginform{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        transform: translate(-50%, -50%);
+        z-index: 1050; /* Ensure it is above other content */
+        display: none;
     }
     .navv img{
         width: 30px;
