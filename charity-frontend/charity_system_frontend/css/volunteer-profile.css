@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin: 0;
+  }
+.blur-background {
+  filter: blur(5px);
+  transition: filter 0.01s ease;
+}
+.heading{
+  display: flex;
+  justify-content: space-between;
+}
+.container .row{
+  width: 100%;
+}
+
+.navbar-link {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Change this to your desired font family */
+  font-size: 13px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the font bold */
+  color: #000; /* Set the text color */
+}
+
+.logo {
+  border-radius: 50%;
+  height: 50px;
+}
+
+.custom-margin-right {
+  margin-right: 50px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+.card-large {
+  max-width: 800px;
+  padding: 20px;
+}
+.custom-name {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #4D784D;
+}
+a.email{
+  text-decoration: none;
+  color: #4D784D;
+}
+.card-align{
+  margin-left: 5em;
+  margin-top: 2.5em;
+}
+samp.samp{
+  font-weight: lighter;
+}
+.email-notification{
+  margin-top: 3em;
+}
+button.yes-button{
+  margin-left: 2.5em;
+}
+.d-flex img {
+  margin-bottom: 0; 
+}
