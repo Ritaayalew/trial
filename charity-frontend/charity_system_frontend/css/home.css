@@ -20,12 +20,23 @@
     z-index: 1050; 
     display: none; 
     border-radius: 30%;
-    width: 350px;
+    width: 40%;
     height: 90vh;
     background-color: rgb(235, 239, 242);
 }
 .modal-form input{
-    height: 28px;
+    height: 30px;
+    max-width: 260px;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+.form-group textarea{
+    width: 260px;
 }
 .modal-loginform{
     color: #000000;

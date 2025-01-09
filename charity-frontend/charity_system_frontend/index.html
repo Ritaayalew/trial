@@ -80,9 +80,10 @@
     </main>
     <div class="container mt-5">
          <form id="signupForm" class="modal-form  p-4 rounded">
+            <h2 class="text-center mb-4">Sign Up</h2>
+            <div id="signupError" class="error-message"></div>
+
             <div class=" active form-group">
-                <h2 class="text-center">Sign Up</h2>
-                <div id="signupError" class="error-message"></div>
                 <label for="username">Fullname</label>
                 <input type="text" class="form-control custom-size" id="fullname"placeholder="Enter your name"  required>
                 
@@ -91,6 +92,12 @@
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control custom-size" id="signupemail" placeholder="Enter email" required>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="phone" class="form-control custom-size" id="phone" placeholder="Enter phone number" required>
                 
             </div>
     
@@ -103,44 +110,48 @@
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input id="confirmSignup" type="password" class="form-control custom-size" placeholder="Confirm Password" required>
-                <div id="signupError4" class="error-message"></div>
             </div>
+
+            <div id="signupError4" class="error-message"></div>
+
             <div class="form-group">
                 <label for="services">Services</label>
                 <textarea placeholder="Text Here" class="form-control custom-size" ></textarea>
             </div>
-    
+
+            <div id="signupError2" class="error-message"></div>
+<!--     
             <div class="form-group form-check">
-               
-                <label class="form-check-label" for="terms"></label>
+
+            </div> -->
+            <div style="justify-content: end; display: flex; margin-right: 90px;">
+                <button type="submit" class="btn btn-success m-2"  onclick="validateSignup()">Sign Up</button>
+                <button type="button" class="btn btn-danger m-2" onclick="closeForm()">Close</button></div>
             </div>
-            <button type="submit" class="btn btn-success" onclick="validateSignup()">Sign Up</button>
-            <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
-        </div>
     </form>
     
     <div class="container mt-5">
         <div id="loginForm" class="modal-loginform bg-white p-4 rounded">
-           <div class=" active form-group">
+           <div class=" active login-group">
                <h2 class="text-center">Login</h2>
-           <div class="form-group">
+           <div class="login-group">
                <label for="email">Email address</label>
                <input type="email" class="form-control custom-size" id="loginEmail" placeholder="Enter email" required>
            </div>
    
-           <div class="form-group">
+           <div class="login-group">
                <label for="password">Password</label>
                <input type="password" class="form-control custom-size" id="password2" placeholder="Password" required>
            </div>
    
-           <div class="form-group form-check">
+           <div class="login-group form-check">
               
                <label class="form-check-label" for="terms"></label>
            </div>
            <div class="p-100">
 
            </div>
-           <button type="submit" class="btn btn-success">Login</button>
+           <button type="submit" class="btn btn-success" id="loginButton">Login</button>
            <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
        </div>
    </div>
@@ -148,24 +159,24 @@
    
    <div class="container mt-5">
     <form id="adminForm" class="modal-adminform bg-white p-4 rounded">
-       <div class=" active form-group">
+       <div class=" active admin-group">
            <h2 class="text-center">Admin</h2>
         <div id="adminError" class="error-message"></div>
 
-       <div class="form-group">
+       <div class="admin-group">
            <label for="email">Email address</label>
            <input type="email" class="form-control custom-size" id="adminEmail" placeholder="Enter email" required>
        </div>
 
-       <div class="form-group">
+       <div class="admin-group">
            <label for="password">Secretkey</label>
            <input type="password" class="form-control custom-size" id="secretkey" placeholder="Secretkey" required>
        </div>
        <div id="adminError4" class="error-message"></div>
 
-       <div class="form-group form-check">
+       <!-- <div class="admin-group form-check">
            
-       </div>
+       </div> -->
        
        <button type="submit" class="btn btn-success" onclick="validateAdmin()">Login</button>
        <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
@@ -196,7 +207,8 @@
         </div>
     </div>
 </footer>
-<script src="./home.js"></script>
+<script src="./index.js"></script>
 <script src="./dist/home.js" type="module"></script>
+<script src="./dist/volunteerLogin.js" type="module"></script>
 </body>
 </html>

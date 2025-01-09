@@ -19,14 +19,15 @@ function registerVolunteer() {
     return __awaiter(this, void 0, void 0, function* () {
         const fullnameInput = document.getElementById('fullname');
         const emailInput = document.getElementById('signupemail');
+        const phoneInput = document.getElementById('phone');
         const passwordInput = document.getElementById('passwordSignup');
         const servicesInput = document.querySelector('textarea');
         const volunteerData = {
             fullName: fullnameInput.value,
             email: emailInput.value,
+            phone: phoneInput.value,
             password: passwordInput.value,
-            services: servicesInput.value,
-            phone: 1234567890 // Add a placeholder phone number as it's required in the DTO
+            services: servicesInput.value
         };
         try {
             const response = yield fetch('http://localhost:3000/api/auth/register', {
@@ -37,8 +38,10 @@ function registerVolunteer() {
                 body: JSON.stringify(volunteerData)
             });
             if (response.ok) {
-                const result = yield response.json();
-                console.log('Volunteer registered:', result);
+                const data = yield response.json();
+                localStorage.setItem('authToken', data.token);
+                console.log('Volunteer registered:', data);
+                window.location.pathname = '/volunteer-dashboard';
                 // Handle successful registration (e.g., show a success message)
             }
             else {

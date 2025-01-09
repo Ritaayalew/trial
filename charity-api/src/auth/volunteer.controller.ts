@@ -8,7 +8,7 @@ import { UpdateProfileDTO } from "src/DTO/update-profile.dto";
 
 
 @UseGuards(AuthGuard('jwt'))
-@Controller('volunteer')
+@Controller('api/volunteer')
 export class VolunteerController {
   constructor(private readonly authService: AuthService) {}
 

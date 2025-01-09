@@ -30,7 +30,10 @@ export class AuthService {
 
         this.repo.create(volunteer);
         try{
-            return await this.repo.save(volunteer);
+            await this.repo.save(volunteer);
+            const jwtPayload={email};
+            const jwtToken=await this.jwt.signAsync(jwtPayload, {expiresIn:'1d', algorithm: 'HS512'});
+            return {token:jwtToken};
         }catch(err){
             throw new InternalServerErrorException('Something went wrong, volunteer not created.'); 
         }

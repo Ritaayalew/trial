@@ -4,7 +4,7 @@ import { RegisterVolunteerDTO } from 'src/DTO/register-volunteer.dto';
 import { VolunteerLoginDTO } from 'src/DTO/volunteer-login.dto';
 
 //http:localhost/3000/api/auth
-@Controller('auth')
+@Controller('api/auth')
 export class AuthController {
 
     constructor(private authService:AuthService){}

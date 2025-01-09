@@ -125,6 +125,8 @@ function validateAdmin() {
         adminError4.textContent = 'incorrect Secret Key'
          return false;
      }
+     
+    window.location.href = window.location.origin + '/admin.html';
     return true; 
 }
 

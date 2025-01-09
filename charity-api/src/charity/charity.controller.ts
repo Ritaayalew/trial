@@ -6,7 +6,7 @@ import { ItemAvailabilityValidationPipe } from 'src/pipes/ItemAvailabilityValida
 import { UpdateItemDto } from 'src/DTO/update-product.dto';
 
 //http:localhost/api/products
-@Controller('products')
+@Controller('api/products')
 export class CharityController {
     constructor(private charityService: CharityService){}
 

@@ -10,15 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 async function registerVolunteer() {
     const fullnameInput = document.getElementById('fullname') as HTMLInputElement;
     const emailInput = document.getElementById('signupemail') as HTMLInputElement;
+    const phoneInput = document.getElementById('phone') as HTMLInputElement;
     const passwordInput = document.getElementById('passwordSignup') as HTMLInputElement;
     const servicesInput = document.querySelector('textarea') as HTMLTextAreaElement;
 
     const volunteerData = {
         fullName: fullnameInput.value,
         email: emailInput.value,
+        phone: phoneInput.value,
         password: passwordInput.value,
-        services: servicesInput.value,
-        phone: 1234567890 // Add a placeholder phone number as it's required in the DTO
+        services: servicesInput.value
     };
 
     try {
@@ -31,8 +32,10 @@ async function registerVolunteer() {
         });
 
         if (response.ok) {
-            const result = await response.json();
-            console.log('Volunteer registered:', result);
+            const data = await response.json();
+            localStorage.setItem('authToken', data.token);
+            console.log('Volunteer registered:', data);
+            window.location.pathname = '/volunteer-dashboard';
             // Handle successful registration (e.g., show a success message)
         } else {
             const error = await response.json();
