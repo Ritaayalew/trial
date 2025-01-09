@@ -37,7 +37,9 @@
         position: fixed;
         margin-left: 10px;
     }
-   
+    .navbar-link.login:hover{
+        background-color: #1a311c;
+      }
     
     .header {
         height: 70vh; 

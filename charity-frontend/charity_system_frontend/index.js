@@ -1,4 +1,9 @@
 
+function toggleSidebar() {
+    const navbarLinks = document.querySelector('.navbar-link');
+    navbarLinks.classList.toggle('active');
+}
+
 function signup() {   
     const form = document.getElementById('signupForm');
     const mainContent = document.querySelector('main');
@@ -129,5 +134,3 @@ function validateAdmin() {
     window.location.href = window.location.origin + '/admin.html';
     return true; 
 }
-
-
