@@ -55,10 +55,12 @@
 
 }
 .navbar-link {
+    display: flex;
+    justify-content: space-between;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-    font-size: 13px; 
-    font-weight: bold; 
-    color: #000; 
+    
+    
+
 }
 
 .logo {
@@ -141,8 +143,8 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
 @media (max-width: 480px) {
     .content-box {
         flex-direction: column; 
-        text-align: center; /* Center text */
-        padding: 20px; /* Add padding for better spacing */
+        text-align: center; 
+        padding: 20px; 
         box-sizing: border-box; 
     }
     .content-box p{
@@ -156,20 +158,15 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
         width: 70%;
         margin-left: 50px;
     }
-    .heading{
-        flex-direction: column;
-    }
-    .navbar-link li{
-        font-size: 10.5px;
-    }
+    
     .modal-form {
         position: fixed;
         top: 50%;
         left: 50%;
         width: 90%;
         transform: translate(-50%, -50%);
-        z-index: 1050; /* Ensure it is above other content */
-        display: none; /* Hidden by default */
+        z-index: 1050; 
+        display: none; 
     }
     .modal-loginform{
         position: fixed;
@@ -177,7 +174,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
         left: 50%;
         width: 90%;
         transform: translate(-50%, -50%);
-        z-index: 1050; /* Ensure it is above other content */
+        z-index: 1050; 
         display: none;
     }
     .navv img{
@@ -201,5 +198,56 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
         width: 40%; 
         margin-top: 70px;
     }
+    .navbar-link {
+        display: none; 
+        position: fixed; 
+        top: 50px;
+        left: 0;
+        width: 260px;
+        height: auto; /* Changed to auto for better flexibility */
+        background-color: #343435;  
+        z-index: 1000;
+        border-radius: 10%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        padding: 10px; /* Add padding for better spacing */
+        transition: background-color 0.3s ease; /* Smooth background transition */
+    }
+    
+    /* Add hover effect */
+    .navbar-link a {
+        color: white; /* Ensure text is visible */
+        text-decoration: none; /* Remove underline */
+        padding: 10px; /* Add padding to links */
+        display: block; /* Make links block-level for easier clicking */
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+    
+    .navbar-link a:hover {
+        background-color: #575859; /* Change background color on hover */
+        border-radius: 5px; /* Subtle rounding on hover */
+    }
+    
+ .navbar-link.active {
+        display: flex;
 
+    }
+    
+    .navv {
+        display: block; 
+        width: 20px;
+    
+    }
+
+ 
+
+.navbar-link {
+    flex-direction: column;
+    margin-left: 20px;
 }
+
+.navbar-link a{
+   font-weight: 800;
+   font-size: 16px;
+    margin-left: 20px;
+    border-bottom: 1px solid rgb(241, 239, 239);
+}}

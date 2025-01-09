@@ -1,4 +1,9 @@
 
+function toggleSidebar() {
+    const navbarLinks = document.querySelector('.navbar-link');
+    navbarLinks.classList.toggle('active');
+}
+
 function signup() {   
     const form = document.getElementById('signupForm');
     const mainContent = document.querySelector('main');
@@ -125,7 +130,8 @@ function validateAdmin() {
         adminError4.textContent = 'incorrect Secret Key'
          return false;
      }
+    if(adminPassword==secretKey){
+        window.location.assign('./Admin.html')
+    }
     return true; 
 }
-
-
