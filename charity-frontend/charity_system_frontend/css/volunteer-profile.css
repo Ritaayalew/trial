@@ -9,6 +9,11 @@
 .heading{
   display: flex;
   justify-content: space-between;
+  color: white;
+  font-family: 'Clicker Script', serif;
+  font-weight: 800;
+  margin-left: 40px;
+  
 }
 .container .row{
   width: 100%;
@@ -59,4 +64,8 @@ button.yes-button{
 }
 .d-flex img {
   margin-bottom: 0; 
+}
+footer h5{
+  color: green;
+  font-weight: bold;
 }
