@@ -12,6 +12,8 @@ export class ItemEntity{
     quantity: number;
     @Column()
     category: string;
+    @Column() 
+    imageUrl: string;
     @Column()
     availability: ItemStatus;
 }

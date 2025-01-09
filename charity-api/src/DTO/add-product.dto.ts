@@ -10,4 +10,6 @@ export class AddItemDto{
     quantity: number;
     @IsOptional()
     category: string;
+    @IsOptional() 
+    imageUrl: string;
 }

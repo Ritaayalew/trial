@@ -18,6 +18,10 @@ export class UpdateItemDto {
   @IsString()
   category?: string;
 
+  @IsOptional() 
+  @IsString() 
+  imageUrl?: string;
+
   @IsOptional()
   availability?: ItemStatus;
 }

@@ -5,7 +5,7 @@ export class ItemAvailabilityValidationPipe implements PipeTransform{
     readonly allowedStatus: ItemStatus[]= [ItemStatus.available, ItemStatus.sold];
 
     transform(value: any, metadata: ArgumentMetadata) {
-        value= value.toUpperCase();
+        value= value?.toUpperCase();
 
         if (!this.isAvailabilityValid(value)){
             throw new BadRequestException(`${value} is an invalid availability status`);

@@ -15,13 +15,14 @@ export class CharityService {
 
     async addProduct(addItemDTO: AddItemDto){
         const item: ItemEntity= new ItemEntity();
-        const {name,price,quantity,category}= addItemDTO;
+        const {name,price,quantity,category,imageUrl}= addItemDTO;
 
         item.name=name;
         item.price=price;
         item.availability= ItemStatus.available;
         item.quantity=quantity;
         item.category=category;
+        item.imageUrl = imageUrl;
 
         this.repo.create(item);
         try{
