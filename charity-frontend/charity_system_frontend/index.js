@@ -11,7 +11,6 @@ function signup() {
     mainContent.classList.add('blur-background'); 
 }
 
-
 function login() {
     const form = document.getElementById('loginForm');
     const mainContent = document.querySelector('main');
@@ -110,7 +109,7 @@ function validateLogin() {
 
 
 function validateAdmin() {
-    const secretKey="12345"
+    const secretKey="Admin123@"
     const adminEmail = document.getElementById('adminEmail').value;
     const adminPassword = document.getElementById('secretkey').value;
     const adminError4 = document.getElementById('adminError4');
@@ -130,7 +129,7 @@ function validateAdmin() {
         adminError4.textContent = 'incorrect Secret Key'
          return false;
      }
-     if (adminPassword === secretKey) {
+     if (adminPassword == secretKey) {
         window.location.assign('./Admin.html');
      }
      

@@ -57,17 +57,18 @@
             Add Product
           </button>
           <div class="dropdown-content p-3 border rounded shadow">
-            <form>
+            <form id="addProductForm">
               <label for="name">Product Name:</label>
               <input type="text" id="name" name="name" class="form-control" />
               <label for="price">Price:</label>
               <input type="text" id="price" name="price" class="form-control" />
-              <label for="description">Description:</label>
-              <textarea
-                id="description"
-                name="description"
-                class="form-control"
-              ></textarea>
+              <label for="price">Image Url:</label>
+              <input type="text" id="imageUrl" name="url" class="form-control" />
+              <label for="category">Category:</label>
+              <input type="text" id="category" name="category" class="form-control" />
+              <label for="quantity">Quantity:</label>
+              <input type="text" id="quantity" name="quantity" class="form-control" />
+      
               <button type="submit" class="btn btn-success mt-2">Add</button>
             </form>
           </div>
@@ -83,11 +84,9 @@
             Remove Product
           </button>
           <div class="dropdown-content p-3 border rounded shadow">
-            <form>
+            <form id="removeProductForm">
               <label for="product">Select Product:</label>
-              <select id="product" name="product" class="form-select">
-                <option value="product1">Product 1</option>
-                <option value="product2">Product 2</option>
+              <input type="text" id="productId" name="product" class="form-control" placeholder="product id" />
               </select>
               <button type="submit" class="btn-success btn-danger mt-2">
                 Remove
@@ -107,15 +106,24 @@
             Update Product
           </button>
           <div class="dropdown-content p-3 border rounded shadow">
-            <form>
-              <label for="update-product">Select Product:</label>
+            <form id="updateProductForm">
+              <label for="selectedProduct">Select Product:</label>
+              <input
+                type="text"
+                id="productIdUpdate"
+                name="selectedProduct"
+                class="form-control"
+                placeholder="product id"
+              />
+
+              <label for="update-product">Select Availability:</label>
               <select
                 id="update-product"
                 name="update-product"
                 class="form-select"
               >
-                <option value="product1">Product 1</option>
-                <option value="product2">Product 2</option>
+                <option value="Available">Available</option>
+                <option value="Sold">Sold</option>
               </select>
               <label for="new-name">New Product Name:</label>
               <input
@@ -131,12 +139,30 @@
                 name="new-price"
                 class="form-control"
               />
-              <label for="new-description">New Description:</label>
-              <textarea
-                id="new-description"
-                name="new-description"
+              <label for="new-category">New Category:</label>
+              <input
+                type="text"
+                id="new-category"
+                name="new-category"
                 class="form-control"
-              ></textarea>
+              />
+
+              <label for="new-quantity">New Quantity:</label>
+              <input
+                type="text"
+                id="new-quantity"
+                name="new-quantity"
+                class="form-control"
+              />
+
+              <label for="new-imageUrl">New Image Url:</label>
+              <input
+                type="text"
+                id="new-imageUrl"
+                name="new-imageUrl"
+                class="form-control"
+              />
+
               <button type="submit" class="btn-success btn-primary mt-2">
                 Update
               </button>
@@ -364,5 +390,8 @@
     ></script>
     <script src="./index.js"></script>
     <script src="./dist/volunteerLogin.js" type="module"></script>
+    <script src="./dist/add-product.js" type="module"></script>
+    <script src="./dist/delete-product.js" type="module"></script>
+    <script src="./dist/update-product.js" type="module"></script>
   </body>
 </html>

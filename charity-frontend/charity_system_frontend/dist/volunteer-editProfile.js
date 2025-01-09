@@ -12,29 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveChangesButton = document.getElementById('saveChangesButton');
     if (saveChangesButton) {
         saveChangesButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
-            const fullName = document.getElementById('firstName').value;
-            const email = document.getElementById('inputEmail4').value;
-            const password = document.getElementById('inputPassword4').value;
-            const phone = document.getElementById('inputAddress2').value;
+            const fullName = document.getElementById('firstName');
+            const email = document.getElementById('inputEmail4');
+            const password = document.getElementById('inputPassword4');
+            const phone = document.getElementById('inputAddress2');
             // const gender = (document.getElementById('inputState') as HTMLSelectElement).value;
-
-
             const updateProfileDTO = {
                 fullName: fullName.value,
                 email: email.value,
                 phone: phone.value,
                 password: password.value,
             };
-           
-
+            // Send POST request to update the profile
             try {
                 const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
                 console.log(token);
                 if (!token) {
                     throw new Error('No token found');
                 }
-
-                const response = yield fetch('/api/volunteer/edit-profile', {
+                const response = yield fetch('http://localhost:3000/api/volunteer/edit-profile', {
                     method: 'PATCH',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -42,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify(updateProfileDTO),
                 });
-                console.log(response);
                 if (!response.ok) {
                     throw new Error('Failed to update profile');
                 }
