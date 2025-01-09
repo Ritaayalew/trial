@@ -1,129 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>profile page</title>
-  <link rel="stylesheet" href="./css/volunteer-profile.css">
-  <link rel="stylesheet" href="./node_modules/bootstrap/css/bootstrap.min.css">
-</head>
-<body>
-  <div class=" header  bg-dark p-1">
-        
-    <div class="heading ">
-        <div class=" d-flex justify-content-between align-items-center"><img class="logo ms-5" src="enredada.jpg" alt="Logo" ><h4 
-            style="font-family: Clicker Script, serif;; font-weight: 800;">Enredada</h4></div>
-        <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
-            <li class="me-3"><a href="#" class="text-decoration-none text-white">Home</a></li>
-            <li class="me-3"><a href="#" class="text-decoration-none text-white">Shop</a></li>
-            <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="signup()">Volunteer</a></li>
-            <li class="me-3"><a href="volunteer-profile.html" class="text-decoration-none text-white">profile</a></li>
-            <li class="me-3"><a href="#" class="text-decoration-none text-white">Admin-Dashboard</a></li>
-            <li class="me-3"><a href="#" class="text-decoration-none text-white border rounded bg-success "  style="width: 150px;">Login</a></li>
-          
-        </ul>
-      </div>
-</div>
-<button type="button" class="btn btn-success custom-margin-right float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  EDIT PROFILE
-</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>profile page</title>
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/volunteer-profile.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="header bg-dark p-1">
+        <div class="heading">
+          <div class="d-flex align-items-center">
+            <img
+              class="logo me-3"
+              src="./photos/enredada.jpg"
+              alt="Logo"
+              style="max-height: 50px; width: auto"
+            />
+            <h4
+              class="m-0"
+              style="font-family: 'Clicker Script', serif; font-weight: 800"
+            >
+              Enredada
+            </h4>
+          </div>
+          <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
+            <li class="me-3">
+              <a href="index.html" class="text-decoration-none text-white"
+                >Home</a
+              >
+            </li>
+            <li class="me-3">
+              <a href="shop.html" class="text-decoration-none text-white"
+                >Shop</a
+              >
+            </li>
+            <li class="me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white"
+                onclick="signup()"
+                >Volunteer</a
+              >
+            </li>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">EDIT PROFILE</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <li class="me-3">
+              <a
+                href="volunteer-profile.html"
+                class="text-decoration-none text-white"
+                >profile</a
+              >
+            </li>
+            <li class="me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white"
+                onclick="admin()"
+                >Admin-Dashboard</a
+              >
+            </li>
+            <li class="login me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white border rounded bg-success"
+                onclick="login()"
+                style="width: 150px"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
+      <button
+        type="button"
+        class="btn btn-success custom-margin-right float-end"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        EDIT PROFILE
+      </button>
 
-<div class="modal-body">
-    <form class="row g-3" id="editProfileForm">
-        <div class="col-12">
-            <label for="firstName" class="form-label">FIRST NAME</label>
-            <input type="text" class="form-control" id="firstName" placeholder="enter your first name">
-        </div>
-        <div class="col-12">
-            <label for="lastName" class="form-label">LAST NAME</label>
-            <input type="text" class="form-control" id="lastName" placeholder="enter your last name">
-        </div>
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="enter your Address">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">GENDER</label>
-            <select id="inputState" class="form-select">
-                <option selected>FEMALE</option>
-                <option>MALE</option>
-            </select>
-        </div>
-    </form>
-</div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">EDIT PROFILE</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" id="saveChangesButton">Save changes</button>
+            <div class="modal-body">
+              <form class="row g-3" id="editProfileForm">
+                <div class="col-12">
+                  <label for="firstName" class="form-label">FIRST NAME</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="enter your first name"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="lastName" class="form-label">LAST NAME</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="enter your last name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword4"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress2"
+                    placeholder="enter your Address"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">GENDER</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>FEMALE</option>
+                    <option>MALE</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                id="saveChangesButton"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-  <div class="card mb-3 card-large custom-margin-right" >
-    <div class="row g-0">
-        <div class="col-md-4">
-          <div class="d-flex flex-column h-100">
-            <img src="./photos/pp.jpg" class="img-fluid rounded-start" alt="profile picture">
-            <p class="text-center fs-2 custom-name mb-0">John Smith</p> 
-            <p class="fw-light text-center fs-6 mb-0"><a class="email" href="">johnsmith@gmail.com</a></p> 
-        </div>
-        
-        </div>
-        <div class="col-md-8">
+      <div class="card mb-3 card-large custom-margin-right">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="d-flex flex-column h-100">
+              <img
+                src="./photos/pp.jpg"
+                class="img-fluid rounded-start"
+                alt="profile picture"
+              />
+              <p class="text-center fs-2 custom-name mb-0">John Smith</p>
+              <p class="fw-light text-center fs-6 mb-0">
+                <a class="email" href="">johnsmith@gmail.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-8">
             <div class="card-body card-align">
-                <p class="card-text fw-bolder"> <samp class="samp ">NAME: </samp> <span class="custom-name" >John Smith</span></p>
-                <p class="card-text fw-bolder"> <samp class="samp">EMAIL: </samp> <a class="email" href="">johnsmith@gmail.com</a></p>
-                <p class="card-text fw-bolder"> <samp class="samp">PHONE: </samp> <span class="samp-phone">0989876555</span></p>
-                <p class="card-text fw-bolder"> <samp class="samp">SERVICES </samp><span class="samp-services"> January 1 2025</span></p>
-                <p class="card-text fw-light email-notification"> Recive email notification?</p>
-                <button type="button" class="btn btn-sm btn-success yes-button" >YES</button>
-                <button type="button" class="btn btn-secondary btn-sm" >NO</button>
+              <p class="card-text fw-bolder">
+                <samp class="samp">NAME: </samp>
+                <span class="custom-name">John Smith</span>
+              </p>
+              <p class="card-text fw-bolder">
+                <samp class="samp">EMAIL: </samp>
+                <a class="email" href="">johnsmith@gmail.com</a>
+              </p>
+              <p class="card-text fw-bolder">
+                <samp class="samp">PHONE: </samp>
+                <span class="samp-phone">0989876555</span>
+              </p>
+              <p class="card-text fw-bolder">
+                <samp class="samp">SERVICES </samp
+                ><span class="samp-services"> January 1 2025</span>
+              </p>
+              <p class="card-text fw-light email-notification">
+                Recive email notification?
+              </p>
+              <button type="button" class="btn btn-sm btn-success yes-button">
+                YES
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm">NO</button>
             </div>
+          </div>
         </div>
-        
+      </div>
+    </main>
+    <div class="container mt-5">
+      <form id="signupForm" class="modal-form p-4 rounded">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <div id="signupError" class="error-message"></div>
+
+        <div class="form-group">
+          <label for="fullname">Fullname</label>
+          <input
+            type="text"
+            class="form-control custom-size"
+            id="fullname"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="signupemail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="signupemail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            class="form-control custom-size"
+            id="phone"
+            placeholder="Enter phone number"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="passwordSignup">Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="passwordSignup"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmSignup">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="confirmSignup"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+
+        <div id="signupError4" class="error-message"></div>
+
+        <div class="form-group">
+          <label for="services">Services</label>
+          <textarea
+            class="form-control custom-size"
+            id="services"
+            placeholder="Text Here"
+          ></textarea>
+        </div>
+
+        <div id="signupError2" class="error-message"></div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button
+              type="submit"
+              class="btn btn-success me-2"
+              onclick="validateSignup()"
+            >
+              Sign Up
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </div>
-  <footer class="bg-dark text-white py-4 d-flex justify-content-center  ">
-    <div class="container">
+    <div class="container mt-5">
+      <div id="loginForm" class="modal-loginform bg-white p-4 rounded">
+        <h2 class="text-center">Login</h2>
+        <div id="loginError" class="error-message"></div>
+        <div class="form-group">
+          <label for="loginEmail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="loginEmail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password2">Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="password2"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success me-2" id="loginButton">
+              Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <form id="adminForm" class="modal-adminform bg-white p-4 rounded">
+        <h2 class="text-center">Admin</h2>
+        <div id="adminError" class="error-message"></div>
+
+        <div class="form-group">
+          <label for="adminEmail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="adminEmail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="secretkey">Secretkey</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="secretkey"
+            placeholder="Secretkey"
+            required
+          />
+        </div>
+        <div id="adminError4" class="error-message"></div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button
+              type="submit"
+              class="btn btn-success me-2"
+              onclick="validateAdmin()"
+            >
+              Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h5>About Us</h5>
-                <p>Learn more about our mission and vision.</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#" class="text-white">Shop</a></li>
-                    <li><a href="#" class="text-white">Volunteer</a></li>
-                    <li><a href="#" class="text-white">admindashboard</a></li>
-                </ul>
-            </div>
-            
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>Learn more about our mission and vision.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white">Home</a></li>
+              <li><a href="shop.html" class="text-white">Shop</a></li>
+              <li>
+                <a href="#" class="text-white">Volunteer</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Admin Dashboard</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Our Address</h5>
+            <address>
+              Eneredada Elders People Association<br />
+              (Non-Governmental-Organisation (NGO))<br />
+              Arada, Addis Ababa, Ethiopia<br />
+              <p>
+                <abbr title="Phone">Phone No:</abbr>
+                <a href="tel:+251111560921">+251 11-1-56-09-21</a>,
+                <a href="tel:+251911813834">+251-911-81-3834</a>
+              </p>
+            </address>
+          </div>
         </div>
         <div class="text-center mt-3">
-            <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+          <p>&copy; 2025 Your Company. All Rights Reserved.</p>
         </div>
-    </div>
-</footer>
-  <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
-  <script src="./dist/volunteer-profile.js" type="module"></script>
-  <script src="../js/bootstrap.bundle.min.js"></script>
-</body>
+      </div>
+    </footer>
+    <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
+    <script src="index.js"></script>
+    <script src="./dist/volunteer-profile.js" type="module"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

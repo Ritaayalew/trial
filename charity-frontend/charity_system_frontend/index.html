@@ -22,9 +22,9 @@
 </style>
 
 <body>
-    
+
 <main class="d-flex flex-column">
-   
+
     <div class=" header  bg-dark p-1">
         <div class="navv" onclick="toggleSidebar()">
             <img class="burger-bar img-fluid mx-auto d-block" src="./photos/nav.png" style="max-width: 50px;">
@@ -33,8 +33,8 @@
             <div class=" d-flex justify-content-between align-items-center"><img class="logo ms-5" src="./photos/enredada.jpg" alt="Logo" ><h4 
                 style="font-family: Clicker Script, serif;; font-weight: 800;">Enredada</h4></div>
                 <ul class="navbar-link list-unstyled mb-0 mx-2 text-white">
-                    <li class="me-3"><a href="#" class="text-decoration-none text-white">Home</a></li>
-                    <li class="me-3"><a href="#" class="text-decoration-none text-white">Shop</a></li>
+                    <li class="me-3"><a href="index.html" class="text-decoration-none text-white">Home</a></li>
+                    <li class="me-3"><a href="shop.html" class="text-decoration-none text-white">Shop</a></li>
                     <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="signup()">Volunteer</a></li>
                     <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="admin()">Admin-Dashboard</a></li>
                     <li class=" login me-3"><a href="#" class="text-decoration-none text-white border rounded bg-success" onclick="login()" style="width: 150px;">Login</a></li>
@@ -48,7 +48,7 @@
     <div class="container">
         <h3><b>Welcome to Enredada Elders People Association</b></h3>
         <div class="content-box ">
-           
+        
             <p>At Enredada Elders People Association, we are dedicated to improving the lives of elderly individuals who lack supportive relatives. 
                 Our mission is to provide comprehensive assistance to seniors, ensuring they receive the care, companionship, and essential services they deserve.</p>
             <p>We offer a range of programs designed to meet the diverse needs of our elderly community. 
@@ -66,7 +66,7 @@
             <div class="p2 " style="font-family:fantasy; color:rgb(3, 72, 3); padding: 10px;" style="border-radius: 30px;"><p>We invite everyone in the community to join us in our efforts to support our elders. Your generosity can make a significant difference in their lives.
                 Whether through donations of essential items, volunteering your time, or spreading the word about our cause, every contribution counts. Together, 
                 we can provide the necessities and companionship that our elders need to live with dignity and joy.</p>
-           
+        
         </div>
         <h5> Thank you for your support!</h5>
     </div>
@@ -78,134 +78,216 @@
         </div>
     </div>
     
-    </main>
-    <div class="container mt-5">
-         <form id="signupForm" class="modal-form  p-4 rounded">
-            <h2 class="text-center mb-4">Sign Up</h2>
-            <div id="signupError" class="error-message"></div>
+</main>
+<div class="container mt-5">
+    <form id="signupForm" class="modal-form p-4 rounded">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <div id="signupError" class="error-message"></div>
 
-            <div class=" active form-group">
-                <label for="username">Fullname</label>
-                <input type="text" class="form-control custom-size" id="fullname"placeholder="Enter your name"  required>
-                
-            </div>
-    
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control custom-size" id="signupemail" placeholder="Enter email" required>
-                
-            </div>
+        <div class="form-group">
+        <label for="fullname">Fullname</label>
+        <input
+            type="text"
+            class="form-control custom-size"
+            id="fullname"
+            placeholder="Enter your name"
+            required
+        />
+        </div>
 
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="phone" class="form-control custom-size" id="phone" placeholder="Enter phone number" required>
-                
-            </div>
-    
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="passwordSignup" type="password" class="form-control custom-size" id="password" placeholder="Password" required>
-                
-            </div>
-    
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input id="confirmSignup" type="password" class="form-control custom-size" placeholder="Confirm Password" required>
-            </div>
+        <div class="form-group">
+        <label for="signupemail">Email address</label>
+        <input
+            type="email"
+            class="form-control custom-size"
+            id="signupemail"
+            placeholder="Enter email"
+            required
+        />
+        </div>
 
-            <div id="signupError4" class="error-message"></div>
+        <div class="form-group">
+        <label for="phone">Phone</label>
+        <input
+            type="tel"
+            class="form-control custom-size"
+            id="phone"
+            placeholder="Enter phone number"
+            required
+        />
+        </div>
 
-            <div class="form-group">
-                <label for="services">Services</label>
-                <textarea placeholder="Text Here" class="form-control custom-size" ></textarea>
-            </div>
+        <div class="form-group">
+        <label for="passwordSignup">Password</label>
+        <input
+            type="password"
+            class="form-control custom-size"
+            id="passwordSignup"
+            placeholder="Password"
+            required
+        />
+        </div>
 
-            <div id="signupError2" class="error-message"></div>
-<!--     
-            <div class="form-group form-check">
+        <div class="form-group">
+        <label for="confirmSignup">Confirm Password</label>
+        <input
+            type="password"
+            class="form-control custom-size"
+            id="confirmSignup"
+            placeholder="Confirm Password"
+            required
+        />
+        </div>
 
-            </div> -->
-            <div style="justify-content: end; display: flex; margin-right: 90px;">
-                <button type="submit" class="btn btn-success m-2"  onclick="validateSignup()">Sign Up</button>
-                <button type="button" class="btn btn-danger m-2" onclick="closeForm()">Close</button></div>
-            </div>
+        <div id="signupError4" class="error-message"></div>
+
+        <div class="form-group">
+        <label for="services">Services</label>
+        <textarea
+            class="form-control custom-size"
+            id="services"
+            placeholder="Text Here"
+        ></textarea>
+        </div>
+
+        <div id="signupError2" class="error-message"></div>
+
+        <div class="form-group">
+        <div class="d-flex justify-content-end">
+            <button
+            type="submit"
+            class="btn btn-success me-2"
+            onclick="validateSignup()"
+            >
+            Sign Up
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+            Close
+            </button>
+        </div>
+        </div>
     </form>
-    
+    </div>
     <div class="container mt-5">
-        <div id="loginForm" class="modal-loginform bg-white p-4 rounded">
-           <div class=" active login-group">
-               <h2 class="text-center">Login</h2>
-           <div class="login-group">
-               <label for="email">Email address</label>
-               <input type="email" class="form-control custom-size" id="loginEmail" placeholder="Enter email" required>
-           </div>
-   
-           <div class="login-group">
-               <label for="password">Password</label>
-               <input type="password" class="form-control custom-size" id="password2" placeholder="Password" required>
-           </div>
-   
-           <div class="login-group form-check">
-              
-               <label class="form-check-label" for="terms"></label>
-           </div>
-           <div class="p-100">
+    <div id="loginForm" class="modal-loginform bg-white p-4 rounded">
+        <h2 class="text-center">Login</h2>
+        <div id="loginError" class="error-message"></div>
+        <div class="form-group">
+        <label for="loginEmail">Email address</label>
+        <input
+            type="email"
+            class="form-control custom-size"
+            id="loginEmail"
+            placeholder="Enter email"
+            required
+        />
+        </div>
 
-           </div>
-           <button type="submit" class="btn btn-success" id="loginButton">Login</button>
-           <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
-       </div>
-   </div>
-   
-   
-   <div class="container mt-5">
+        <div class="form-group">
+        <label for="password2">Password</label>
+        <input
+            type="password"
+            class="form-control custom-size"
+            id="password2"
+            placeholder="Password"
+            required
+        />
+        </div>
+
+        <div class="form-group">
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success me-2" id="loginButton">
+            Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+            Close
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container mt-5">
     <form id="adminForm" class="modal-adminform bg-white p-4 rounded">
-       <div class=" active admin-group">
-           <h2 class="text-center">Admin</h2>
+        <h2 class="text-center">Admin</h2>
         <div id="adminError" class="error-message"></div>
 
-       <div class="admin-group">
-           <label for="email">Email address</label>
-           <input type="email" class="form-control custom-size" id="adminEmail" placeholder="Enter email" required>
-       </div>
+        <div class="form-group">
+        <label for="adminEmail">Email address</label>
+        <input
+            type="email"
+            class="form-control custom-size"
+            id="adminEmail"
+            placeholder="Enter email"
+            required
+        />
+        </div>
 
-       <div class="admin-group">
-           <label for="password">Secretkey</label>
-           <input type="password" class="form-control custom-size" id="secretkey" placeholder="Secretkey" required>
-       </div>
-       <div id="adminError4" class="error-message"></div>
+        <div class="form-group">
+        <label for="secretkey">Secretkey</label>
+        <input
+            type="password"
+            class="form-control custom-size"
+            id="secretkey"
+            placeholder="Secretkey"
+            required
+        />
+        </div>
+        <div id="adminError4" class="error-message"></div>
 
-       <!-- <div class="admin-group form-check">
-           
-       </div> -->
-       
-       <button type="submit" class="btn btn-success" onclick="validateAdmin()">Login</button>
-       <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+        <div class="form-group">
+        <div class="d-flex justify-content-end">
+            <button
+            type="submit"
+            class="btn btn-success me-2"
+            onclick="validateAdmin()"
+            >
+            Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+            Close
+            </button>
+        </div>
+        </div>
     </form>
-</div>
-
-
-<footer class="bg-dark text-white py-4 d-flex justify-content-center  ">
+    </div>
+<footer class="bg-dark text-white " >
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>About Us</h5>
-                <p>Learn more about our mission and vision.</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#" class="text-white">Shop</a></li>
-                    <li><a href="#" class="text-white">Volunteer</a></li>
-                    <li><a href="#" class="text-white">admindashboard</a></li>
-                </ul>
-            </div>
-            
+    <div class="row">
+        <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>Learn more about our mission and vision.</p>
         </div>
-        <div class="text-center mt-3">
-            <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+        <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="shop.html" class="text-white">Shop</a></li>
+            <li>
+            <a href="#" class="text-white">Volunteer</a>
+            </li>
+            <li>
+            <a href="#" class="text-white">Admin Dashboard</a>
+            </li>
+        </ul>
         </div>
+        <div class="col-md-4">
+        <h5>Our Address</h5>
+        <address>
+            Eneredada Elders People Association<br />
+            (Non-Governmental-Organisation (NGO))<br />
+            Arada, Addis Ababa, Ethiopia<br />
+            <p>
+            <abbr title="Phone">Phone No:</abbr>
+            <a href="tel:+251111560921">+251 11-1-56-09-21</a>,
+            <a href="tel:+251911813834">+251-911-81-3834</a>
+            </p>
+        </address>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </div>
     </div>
 </footer>
 <script src="./index.js"></script>

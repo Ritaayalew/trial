@@ -1,3 +1,12 @@
+.heading{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Clicker Script', serif;
+    font-weight: 800;
+    margin-left: 40px;
+    
+  }
 .sec1, .sec2 {
     display: flex;
     justify-content: center;
@@ -48,3 +57,7 @@
     box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5);
     border-radius: 5px;    
 }
+footer h5{
+    color: green;
+    font-weight: bold;
+  }

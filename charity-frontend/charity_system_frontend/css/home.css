@@ -2,68 +2,6 @@
 *{
     padding: 0;
     margin: 0;
-    }
-.blur-background {
-    filter: blur(5px);
-    transition: filter 0.01s ease;
-}
-.heading{
-    display: flex;
-    justify-content: space-between;
-}
-.modal-form {
-    color: #000000;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1050; 
-    display: none; 
-    border-radius: 30%;
-    width: 40%;
-    height: 90vh;
-    background-color: rgb(235, 239, 242);
-}
-.modal-form input{
-    height: 30px;
-    max-width: 260px;
-}
-.form-group{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding-bottom: 10px;
-    
-}
-.form-group textarea{
-    width: 260px;
-}
-.modal-loginform{
-    color: #000000;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1050; 
-    display: none; 
-    border-radius: 30%;
-    width: 350px;
-   
-}
-.modal-adminform{
-    color: #000000;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-       
-    transform: translate(-50%, -50%);
-    z-index: 1050; 
-    display: none; 
-    border-radius: 30%;
-    width: 350px;
-   
-
 }
 .navbar-link {
     display: flex;
@@ -110,6 +48,7 @@
     0px 0px 15px rgba(17, 99, 52, 0.5),
     0px 0px 25px rgba(141, 198, 166, 0.5);
 }
+
 .container h3{
     font-family:fantasy; font-weight: 700;  
     font-size: 20px; color:rgb(9, 159, 9); 

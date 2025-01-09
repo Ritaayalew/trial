@@ -1,30 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/shop.css">
-</head>
-<body>
-    <header class="head">
-        <div class="donate"><button class="donate-button">Donate Now</button></div>
-        <nav class="navt">
-            <ul>
-                <li>Home</li>
-                <li>Admin Dashboard</li>
-                <li>Shop</li>
-                <li>Volunteer</li>
-                <li>Login</li>
-            </ul>
-        </nav>
-    </header>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/shop.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+  <body>
     <main>
-        <section class="sec1" id="productContainer">
-
-        </section>        
+      <div class="header bg-dark p-1">
+        <header class="heading">
+          <div class="d-flex align-items-center">
+            <img
+              class="logo me-3"
+              src="./photos/enredada.jpg"
+              alt="Logo"
+              style="max-height: 50px; width: auto"
+            />
+            <h4
+              class="m-0"
+              style="font-family: 'Clicker Script', serif; font-weight: 800"
+            >
+              Enredada
+            </h4>
+          </div>
+          <ul class="navbar-link d-flex list-unstyled mb-0 mx-2 text-white">
+            <li class="me-3">
+              <a href="index.html" class="text-decoration-none text-white"
+                >Home</a
+              >
+            </li>
+            <li class="me-3">
+              <a href="shop.html" class="text-decoration-none text-white"
+                >Shop</a
+              >
+            </li>
+            <li class="me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white"
+                onclick="signup()"
+                >Volunteer</a
+              >
+            </li>
+            <li class="me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white"
+                onclick="admin()"
+                >Admin-Dashboard</a
+              >
+            </li>
+            <li class="me-3">
+              <a
+                href="#"
+                class="text-decoration-none text-white border rounded bg-success"
+                onclick="login()"
+                style="width: 150px"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </header>
+      </div>
     </main>
+    <div class="container mt-5">
+      <form id="signupForm" class="modal-form p-4 rounded">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <div id="signupError" class="error-message"></div>
 
+        <div class="form-group">
+          <label for="fullname">Fullname</label>
+          <input
+            type="text"
+            class="form-control custom-size"
+            id="fullname"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="signupemail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="signupemail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            class="form-control custom-size"
+            id="phone"
+            placeholder="Enter phone number"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="passwordSignup">Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="passwordSignup"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmSignup">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="confirmSignup"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+
+        <div id="signupError4" class="error-message"></div>
+
+        <div class="form-group">
+          <label for="services">Services</label>
+          <textarea
+            class="form-control custom-size"
+            id="services"
+            placeholder="Text Here"
+          ></textarea>
+        </div>
+
+        <div id="signupError2" class="error-message"></div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button
+              type="submit"
+              class="btn btn-success me-2"
+              onclick="validateSignup()"
+            >
+              Sign Up
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container mt-5">
+      <div id="loginForm" class="modal-loginform bg-white p-4 rounded">
+        <h2 class="text-center">Login</h2>
+        <div id="loginError" class="error-message"></div>
+        <div class="form-group">
+          <label for="loginEmail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="loginEmail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password2">Password</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="password2"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success me-2" id="loginButton">
+              Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <form id="adminForm" class="modal-adminform bg-white p-4 rounded">
+        <h2 class="text-center">Admin</h2>
+        <div id="adminError" class="error-message"></div>
+
+        <div class="form-group">
+          <label for="adminEmail">Email address</label>
+          <input
+            type="email"
+            class="form-control custom-size"
+            id="adminEmail"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="secretkey">Secretkey</label>
+          <input
+            type="password"
+            class="form-control custom-size"
+            id="secretkey"
+            placeholder="Secretkey"
+            required
+          />
+        </div>
+        <div id="adminError4" class="error-message"></div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-end">
+            <button
+              type="submit"
+              class="btn btn-success me-2"
+              onclick="validateAdmin()"
+            >
+              Login
+            </button>
+            <button type="button" class="btn btn-danger" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>Learn more about our mission and vision.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white">Home</a></li>
+              <li><a href="shop.html" class="text-white">Shop</a></li>
+              <li>
+                <a href="#" class="text-white">Volunteer</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Admin Dashboard</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Our Address</h5>
+            <address>
+              Eneredada Elders People Association<br />
+              (Non-Governmental-Organisation (NGO))<br />
+              Arada, Addis Ababa, Ethiopia<br />
+              <p>
+                <abbr title="Phone">Phone No:</abbr>
+                <a href="tel:+251111560921">+251 11-1-56-09-21</a>,
+                <a href="tel:+251911813834">+251-911-81-3834</a>
+              </p>
+            </address>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
     <script src="./dist/shop.js" type="module"></script>
-</body>
+  </body>
 </html>
