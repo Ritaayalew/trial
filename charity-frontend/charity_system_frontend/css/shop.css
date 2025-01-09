@@ -1,14 +1,12 @@
-.sec1, .sec2 {
+.sec1{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0;
-    margin-bottom: 100px;
+    margin: 0 10% 100px;
 }    
 .sec1 article, .sec2 article {
-    margin: 20px;
+    margin: 10px;
     text-align: center;
-    margin-left: 100px;
     background-color: rgb(225, 224, 224);
     padding: 25px;
 }
@@ -47,4 +45,11 @@
 .cls1 {
     box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5);
     border-radius: 5px;    
+}
+.cls1 img{
+    width: 200px;
+    height: 200px;
+}
+.cls1 .container{
+    object-fit: cover;
 }

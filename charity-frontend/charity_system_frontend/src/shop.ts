@@ -1,3 +1,12 @@
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    quantity: number;
+    category: string;
+    availability: string;
+    imageUrl: string;
+}
 
 async function fetchProducts(){
     try {
@@ -18,14 +27,15 @@ async function fetchProducts(){
     }
 }
 
-function createProductCard(product): string {
+function createProductCard(product: Product) {
+    console.log(product.imageUrl);
     return `
         <article class="cls1">
             <img src="${product.imageUrl}" alt="Product Image">
             <ul>
-                <li>${product.price}</li>
-                <li>${product.description}</li>
-                <li>${product.quantity}</li>
+                <li>Price: ${product.price} birr</li>
+                <li>Category: ${product.category}</li>
+                <li>Quantity: ${product.quantity}</li>
             </ul>
         </article>
     `;

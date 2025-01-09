@@ -29,13 +29,14 @@ function fetchProducts() {
     });
 }
 function createProductCard(product) {
+    console.log(product.imageUrl);
     return `
         <article class="cls1">
             <img src="${product.imageUrl}" alt="Product Image">
             <ul>
-                <li>${product.price}</li>
-                <li>${product.category}</li>
-                <li>${product.quantity}</li>
+                <li>Price: ${product.price} birr</li>
+                <li>Category: ${product.category}</li>
+                <li>Quantity: ${product.quantity}</li>
             </ul>
         </article>
     `;
