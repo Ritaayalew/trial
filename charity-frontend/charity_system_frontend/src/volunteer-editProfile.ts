@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data: ProfileData = await response.json();
 
                 const requestBody = {
-                    emailInput: data.email,
+                    emailInput: data[0].email,
                     updateProfileDTO: updateProfileDTO
                 };
     
@@ -81,35 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// try {
-            //     const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
-            //     console.log(token);
-            //     if (!token) {
-            //         throw new Error('No token found');
-            //     }
-
-            //     const response = await fetch('http://localhost:3000/api/volunteer/edit-profile', {
-            //         method: 'PATCH',
-            //         headers: {
-            //             'Authorization': `Bearer ${token}`,
-            //             'Content-Type': 'application/json'
-            //         },
-            //         body: JSON.stringify(updateProfileDTO),
-            //     });
-
-            //     if (!response.ok) {
-            //         throw new Error('Failed to update profile');
-            //     }
-
-            //     const result = await response.json();
-            //     console.log('Profile updated successfully:', result);
-
-            //     // Optionally, you can add code to update the profile view or show a success message.
-            // } catch (error) {
-            //     console.error('Error updating profile:', error);
-            //     // Optionally, you can add code to show an error message.
-            // }
 
 
 

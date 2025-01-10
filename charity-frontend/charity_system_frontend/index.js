@@ -107,15 +107,15 @@ function validateLogin() {
 }
 
 
-
 function validateAdmin() {
-    const secretKey="Admin123@"
+    const secretKey = "Admin123@";
     const adminEmail = document.getElementById('adminEmail').value;
     const adminPassword = document.getElementById('secretkey').value;
     const adminError4 = document.getElementById('adminError4');
     const adminError = document.getElementById('adminError');
 
     adminError4.textContent = ''; 
+
     if (adminEmail.trim() === '') {
         adminError.textContent = 'Admin email is required.';
         return false;
@@ -125,14 +125,15 @@ function validateAdmin() {
         return false;
     }
     if (adminPassword !== secretKey) {
-        
-        adminError4.textContent = 'incorrect Secret Key'
-         return false;
-     }
-     if (adminPassword == secretKey) {
+        adminError4.textContent = 'Incorrect Secret Key';
+        return false;
+    }
+    if (adminPassword == secretKey){
+        console.log("Redirecting to admin dashboard");
         window.location.assign('./Admin.html');
-     }
-     
-    // window.location.href = window.location.origin + './Admin.html';
-    return true; 
+    }
+
+    
+    return true;
 }
+
