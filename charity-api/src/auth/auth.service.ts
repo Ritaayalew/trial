@@ -64,40 +64,40 @@ export class AuthService {
         throw new InternalServerErrorException('Failed to fetch user data.'); 
     } }
 
-    // async updateProfile(email:string, updateProfileDTO: UpdateProfileDTO){
-    //     await this.repo.update({email},updateProfileDTO);
-    //     return this.repo.findOne({where:{email}});
-    // }
-
-    async updateProfile(email: string, updateProfileDTO: UpdateProfileDTO) {
-        const updateData: Partial<VolunteerEntity> = {};
-    
-        if (updateProfileDTO.fullName) {
-            updateData.fullName = updateProfileDTO.fullName;
-        }
-        if (updateProfileDTO.email) {
-            updateData.email = updateProfileDTO.email;
-        }
-        if (updateProfileDTO.phone) {
-            updateData.phone = updateProfileDTO.phone;
-        }
-        if (updateProfileDTO.password) {
-            updateData.password = updateProfileDTO.password;
-        }
-        if (updateProfileDTO.services) {
-            updateData.services = updateProfileDTO.services;
-        }
-    
-        console.log('Updating profile with data:', updateData);
-    
-        // Check if the updateData object is empty
-        if (Object.keys(updateData).length === 0) {
-            throw new Error('No valid fields to update');
-        }
-    
-        await this.repo.update({ email }, updateData);
-        return this.repo.findOne({ where: { email } });
+    async updateProfile(email:string, updateProfileDTO: UpdateProfileDTO){
+        await this.repo.update({email},updateProfileDTO);
+        return this.repo.findOne({where:{email}});
     }
+
+    // async updateProfile(email: string, updateProfileDTO: UpdateProfileDTO) {
+    //     const updateData: Partial<VolunteerEntity> = {};
+    
+    //     if (updateProfileDTO.fullName) {
+    //         updateData.fullName = updateProfileDTO.fullName;
+    //     }
+    //     if (updateProfileDTO.email) {
+    //         updateData.email = updateProfileDTO.email;
+    //     }
+    //     if (updateProfileDTO.phone) {
+    //         updateData.phone = updateProfileDTO.phone;
+    //     }
+    //     if (updateProfileDTO.password) {
+    //         updateData.password = updateProfileDTO.password;
+    //     }
+    //     if (updateProfileDTO.services) {
+    //         updateData.services = updateProfileDTO.services;
+    //     }
+    
+    //     console.log('Updating profile with data:', updateData);
+    
+    //     // Check if the updateData object is empty
+    //     if (Object.keys(updateData).length === 0) {
+    //         throw new Error('No valid fields to update');
+    //     }
+    
+    //     await this.repo.update({ email }, updateData);
+    //     return this.repo.findOne({ where: { email } });
+    // }
     
 
 }

@@ -1,50 +1,119 @@
 document.addEventListener('DOMContentLoaded', () => {
     const saveChangesButton = document.getElementById('saveChangesButton');
 
+    interface ProfileData {
+        fullName: string;
+        email: string;
+        phone: string;
+        services: string; 
+      }
+
     if (saveChangesButton) {
         saveChangesButton.addEventListener('click', async () => {
             const fullName = document.getElementById('firstName') as HTMLInputElement;
-            const email = document.getElementById('inputEmail4') as HTMLInputElement;
-            const password = document.getElementById('inputPassword4') as HTMLInputElement;
-            const phone = document.getElementById('inputAddress2') as HTMLInputElement;
-            // const gender = (document.getElementById('inputState') as HTMLSelectElement).value;
+                const email = document.getElementById('inputEmail4') as HTMLInputElement;
+                const password = document.getElementById('inputPassword4') as HTMLInputElement;
+                const phone = document.getElementById('inputAddress2') as HTMLInputElement;
+    
+                // Create the payload, including only defined values
+                const updateProfileDTO: { [key: string]: any } = {};
+                if (fullName.value) updateProfileDTO.fullName = fullName.value;
+                if (email.value) updateProfileDTO.email = email.value;
+                if (phone.value) updateProfileDTO.phone = phone.value;
+                if (password.value) updateProfileDTO.password = password.value;
 
-            const updateProfileDTO = {
-                fullName: fullName.value,
-                email: email.value,
-                phone: phone.value,
-                password: password.value,
-            };
-
-            // Send POST request to update the profile
             try {
                 const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
                 console.log(token);
                 if (!token) {
                     throw new Error('No token found');
                 }
-
-                const response = await fetch('http://localhost:3000/api/volunteer/edit-profile', {
-                    method: 'PATCH',
+          
+                const response = await fetch('/api/volunteer/my-profile', {
+                    method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(updateProfileDTO),
                 });
-
+          
                 if (!response.ok) {
-                    throw new Error('Failed to update profile');
+                    throw new Error('Failed to fetch profile data');
                 }
+          
+                const data: ProfileData = await response.json();
 
-                const result = await response.json();
-                console.log('Profile updated successfully:', result);
-
-                // Optionally, you can add code to update the profile view or show a success message.
+                const requestBody = {
+                    emailInput: data.email,
+                    updateProfileDTO: updateProfileDTO
+                };
+    
+                try {
+                    const response = await fetch('http://localhost:3000/api/volunteer/edit-profile', {
+                        method: 'PATCH',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(requestBody),
+                    });
+    
+                    if (!response.ok) {
+                        const errorMessage = await response.text();
+                        console.error('Error message from server:', errorMessage);
+                        throw new Error('Failed to update profile');
+                    }
+    
+                    const result = await response.json();
+                    console.log('Profile updated successfully:', result);
+                    console.log(response);
+                    alert('Profile updated successfully!');
+                    
+                } catch (error) {
+                    console.error('Error updating profile:', error);
+                    alert('Error updating profile. Please try again.');
+                }
+        
             } catch (error) {
-                console.error('Error updating profile:', error);
-                // Optionally, you can add code to show an error message.
-            }
+                console.error('Error fetching profile data:', error);
+            }  
+            
         });
     }
 });
+
+
+// try {
+            //     const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
+            //     console.log(token);
+            //     if (!token) {
+            //         throw new Error('No token found');
+            //     }
+
+            //     const response = await fetch('http://localhost:3000/api/volunteer/edit-profile', {
+            //         method: 'PATCH',
+            //         headers: {
+            //             'Authorization': `Bearer ${token}`,
+            //             'Content-Type': 'application/json'
+            //         },
+            //         body: JSON.stringify(updateProfileDTO),
+            //     });
+
+            //     if (!response.ok) {
+            //         throw new Error('Failed to update profile');
+            //     }
+
+            //     const result = await response.json();
+            //     console.log('Profile updated successfully:', result);
+
+            //     // Optionally, you can add code to update the profile view or show a success message.
+            // } catch (error) {
+            //     console.error('Error updating profile:', error);
+            //     // Optionally, you can add code to show an error message.
+            // }
+
+
+
+
+
+
+          

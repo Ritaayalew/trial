@@ -19,11 +19,19 @@ export class VolunteerController {
   }
 
 
+  // @Patch('edit-profile')
+  // updateProfile(
+  //   @Body(ValidationPipe) updateProfileDTO: UpdateProfileDTO,
+  //   @User() user:VolunteerEntity){
+  //   return this.authService.updateProfile(user.email,updateProfileDTO);
+  // }
+
   @Patch('edit-profile')
-  updateProfile(
-    @Body(ValidationPipe) updateProfileDTO: UpdateProfileDTO,
-    @User() user:VolunteerEntity){
-    return this.authService.updateProfile(user.email,updateProfileDTO);
+  async updateProfile(
+    @Body('emailInput') email: string,
+    @Body('updateProfileDTO', ValidationPipe) updateProfileDTO: UpdateProfileDTO){
+    return this.authService.updateProfile(email, updateProfileDTO);
   }
 
 }
+

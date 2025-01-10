@@ -41,14 +41,14 @@ function updateProfile(data) {
     const phoneElement = document.querySelector('.samp-phone');
     const servicesElement = document.querySelector('.samp-services');
     if (nameElement.length) {
-        nameElement.forEach(element => { element.textContent = data.fullName; });
+        nameElement.forEach(element => { element.textContent = data[0].fullName; });
     }
     if (emailElements.length) {
-        emailElements.forEach(e => e.textContent = data.email);
+        emailElements.forEach(e => e.textContent = data[0].email);
     }
     if (phoneElement)
-        phoneElement.textContent = data.phone;
+        phoneElement.textContent = data[0].phone;
     if (servicesElement)
-        servicesElement.textContent = data.services;
+        servicesElement.textContent = data[0].services;
 }
 document.addEventListener('DOMContentLoaded', fetchProfile);
