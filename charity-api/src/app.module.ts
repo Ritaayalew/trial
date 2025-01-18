@@ -6,6 +6,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ReservationModule } from './reservation/reservation.module';
 
 
 const ormOptions: TypeOrmModuleOptions={
@@ -26,7 +27,8 @@ const ormOptions: TypeOrmModuleOptions={
     CharityModule,
     TypeOrmModule.forRoot(ormOptions),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', '..', 'charity-frontend','charity_system_frontend'),}),
-    AuthModule ],
+    AuthModule,
+    ReservationModule ],
   controllers: [AppController],
   providers: [AppService],
 })
