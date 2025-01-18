@@ -10,9 +10,14 @@
     background-color: rgb(178, 215, 227);
     padding: 25px;
 }
-
+.List{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 30px;
+    color: aqua;
+}
 .icon-cart{
-   margin-left: 500px;
+   margin-right: 50px;
    display: flex;
 
 }
