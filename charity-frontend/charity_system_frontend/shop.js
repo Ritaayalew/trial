@@ -1,3 +1,4 @@
+
 function cartIcon() {   
     const form = document.getElementById('cart-tab');
     const mainContent = document.querySelector('.main');
@@ -10,7 +11,10 @@ function shopClose(){
     carts.style.display = "none"; 
     mainContet.classList.remove('blur-background'); 
 }
+
+
 function addToCart(button) { 
+   
     var item = button.closest('.item');
     var image = item.querySelector('.image img').src; 
     var name = item.querySelector('.name').textContent;
@@ -32,6 +36,7 @@ function addToCart(button) {
         </div> 
     </div>
 `; 
+
 cartContainer.appendChild(cartItem); 
 
     cartItem.querySelector('.remove').addEventListener('click', function() {
