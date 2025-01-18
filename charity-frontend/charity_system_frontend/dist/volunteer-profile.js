@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function fetchProfile() {
+export function fetchProfile() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier

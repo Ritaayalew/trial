@@ -6,7 +6,7 @@ interface ProfileData {
   gender: string;
 }
 
-async function fetchProfile() {
+export async function fetchProfile() {
   try {
       const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
       console.log(token);

@@ -13,7 +13,7 @@ const ormOptions: TypeOrmModuleOptions={
   host: "localhost",
   port: 3306,
   username: "root",
-  password: "tati9021@",
+  password: "Hr123",
   database: "charity_database",
   autoLoadEntities: true,
   synchronize: true

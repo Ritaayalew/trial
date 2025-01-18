@@ -1,3 +1,5 @@
+import { fetchProfile } from './volunteer-profile.js';
+
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -10,23 +12,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 document.addEventListener('DOMContentLoaded', () => {
     const saveChangesButton = document.getElementById('saveChangesButton');
+
     if (saveChangesButton) {
-        saveChangesButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+        saveChangesButton.addEventListener('click',() => __awaiter(void 0, void 0, void 0, function* () {
             const fullName = document.getElementById('firstName');
             const email = document.getElementById('inputEmail4');
             const password = document.getElementById('inputPassword4');
-            const phone = document.getElementById('inputAddress2');
-            
-            
+            const phone = document.getElementById('lastName');
+            const services = document.getElementById('inputAddress2');
+            // Create the payload, including only defined values
             const updateProfileDTO = {};
             if (fullName.value)
                 updateProfileDTO.fullName = fullName.value;
             if (email.value)
                 updateProfileDTO.email = email.value;
             if (phone.value)
-                updateProfileDTO.phone = phone.value;
+                updateProfileDTO.phone = Number(phone.value);
             if (password.value)
                 updateProfileDTO.password = password.value;
+            if (services.value)
+                updateProfileDTO.services = services.value;
             try {
                 const token = localStorage.getItem('authToken'); // Make sure the key matches what you used earlier
                 console.log(token);
@@ -43,13 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error('Failed to fetch profile data');
                 }
                 const data = yield response.json();
-                console.log(data[0].email);
                 const requestBody = {
                     emailInput: data[0].email,
                     updateProfileDTO: updateProfileDTO
                 };
                 try {
-                    const response = yield fetch('http://localhost:3000/api/volunteer/edit-profile', {
+                    const updateResponse = yield fetch('http://localhost:3000/api/volunteer/edit-profile', {
                         method: 'PATCH',
                         headers: {
                             'Authorization': `Bearer ${token}`,
@@ -57,14 +61,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         body: JSON.stringify(requestBody),
                     });
-                    if (!response.ok) {
-                        const errorMessage = yield response.text();
+                    if (!updateResponse.ok) {
+                        const errorMessage = yield updateResponse.text();
                         console.error('Error message from server:', errorMessage);
+                        console.log(updateResponse);
+                        console.log(requestBody);
                         throw new Error('Failed to update profile');
                     }
-                    const result = yield response.json();
-                    console.log('Profile updated successfully:', result);
-                    alert('Profile updated successfully!');
+                    else {
+                        const result = yield updateResponse.json();
+                        console.log('Profile updated successfully:', result);
+
+                        if (result.token) { localStorage.setItem('authToken', result.token); }
+                        
+                        console.log(updateResponse);
+                        console.log(requestBody);
+                        alert('Profile updated successfully!');
+                        fetchProfile();
+                    }
                 }
                 catch (error) {
                     console.error('Error updating profile:', error);
@@ -77,4 +91,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 });
-

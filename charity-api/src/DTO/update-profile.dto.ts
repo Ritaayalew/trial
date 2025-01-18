@@ -19,5 +19,8 @@ export class UpdateProfileDTO {
     password?: string;
     @IsOptional()
     @IsString()
-    services?: string;   
+    services?: string;  
+    @IsOptional()
+    @IsString()
+    salt: string; 
 }

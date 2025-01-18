@@ -64,10 +64,27 @@ export class AuthService {
         throw new InternalServerErrorException('Failed to fetch user data.'); 
     } }
 
-    async updateProfile(email:string, updateProfileDTO: UpdateProfileDTO){
-        await this.repo.update({email},updateProfileDTO);
-        return this.repo.findOne({where:{email}});
+    async updateProfile(email: string, updateProfileDTO: UpdateProfileDTO) {
+        if (updateProfileDTO.password) {
+            const hashed = await bcrypt.hash(updateProfileDTO.password, 12);
+            const salt = await bcrypt.getSalt(hashed);
+            updateProfileDTO.password = hashed;
+            updateProfileDTO.salt = salt;
+        }
+
+        await this.repo.update({ email }, updateProfileDTO);
+
+        if (updateProfileDTO.email) { 
+            const jwtPayload = { email: updateProfileDTO.email }; 
+            const jwtToken = await this.jwt.signAsync(jwtPayload, { expiresIn: '1d', algorithm: 'HS512' }); 
+            return { message: 'Profile updated successfully', token: jwtToken};
+        }
+
+        
+        return this.repo.findOne({ where: { email: updateProfileDTO.email || email }});
     }
+
+    
 
     // async updateProfile(email: string, updateProfileDTO: UpdateProfileDTO) {
     //     const updateData: Partial<VolunteerEntity> = {};
