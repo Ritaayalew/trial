@@ -14,19 +14,46 @@
     display: flex;
     justify-content: space-between;
     margin: 10px 30px;
-    color: aqua;
+  
+}
+#counter{
+    background-color: orange;
+    text-align: center;
+    font-weight: 600;
+    width: 20px;
+    border-radius: 50%;
+    height: 25px;
+
 }
 .icon-cart{
    margin-right: 50px;
    display: flex;
-
+   cursor: pointer;
 }
+.remove {
+    cursor: pointer;
+    background-color: rgb(206, 93, 32);
+    height: 25px; /* Set the height */
+    padding: 0 7px; /* Add some padding for better appearance */
+    color: white;
+    border-radius: 20%;
+    font-weight: 600;
+  
+}
+
+.remove:hover {
+    background-color:rgb(163, 55, 9);
+    transform: scale(1.1);
+}
+.icon-cart:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+ }
 .image img{
     width: 45px; 
     height: 50px; 
 }
 .cart-tab{
-    color: #000000;
     position:absolute;
     overflow-y: auto;
     top: 50%;
@@ -36,7 +63,10 @@
     display: none; 
     width: 35%;
     height: 90vh;
-    background-color: rgb(7, 7, 7);
+    background-color: rgb(231, 228, 225);
+    box-shadow: 0px 0px 10px rgba(110, 111, 110, 0.5),
+    0px 0px 15px rgba(128, 138, 132, 0.5),
+    0px 0px 25px rgba(130, 134, 132, 0.5);
     }
 .cart-tab .listCart .item{
      display: grid;
@@ -44,17 +74,9 @@
     gap: 10px;
     text-align: center;
     align-items: center; 
-    color: whitesmoke;
+    color: rgb(8, 0, 0);
 }
 
-.icon-cart span{
-    display: block;
-    color: whitesmoke;
-    background-color: red;
-    width: 15px;
-    height: 20px;
-    text-align: center;
-}
 .quantity span{
     display: inline-block;
     border-radius: 50%;
@@ -75,24 +97,7 @@
 .listCart{
     overflow: auto;
 }
-.listCart::-webkkit-scrollbar{
-    width: 0;
-}
-.donate{
-    background-color: #4D784D;
-    text-align: right;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-.donate button{
-    padding-right: 50px;
-    font-weight: bold;   
-}
+
 .navt{
     text-align: right;
     margin-right: 20px;
@@ -141,4 +146,16 @@
 }
 .cls1 .container{
     object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .cart-tab{
+        width: 90%;
+    }   
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+    .cart-tab{
+        width: 80%;
+    }
 }

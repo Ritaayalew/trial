@@ -12,9 +12,11 @@ function shopClose(){
     mainContet.classList.remove('blur-background'); 
 }
 
-
+let counter=0;
 function addToCart(button) { 
-   
+    counter+=1;
+    var itemCouner=document.getElementById('counter')
+    itemCouner.textContent=counter;
     var item = button.closest('.item');
     var image = item.querySelector('.image img').src; 
     var name = item.querySelector('.name').textContent;
@@ -22,7 +24,7 @@ function addToCart(button) {
     var quantity = item.querySelector('.quantity').textContent; 
     var cartContainer = document.getElementById('cartContainer'); 
     var cartItem = document.createElement('div'); 
-    cartItem.classList.add('item');
+    // cartItem.classList.add('item');
     cartItem.innerHTML = ` 
     <div class="cart-item d-flex" style="display: flex; align-items: center;"> 
         <div class="image" style="margin-right:70px;"> 
@@ -31,16 +33,17 @@ function addToCart(button) {
         <div class="name" style="margin-right: 70px;">${name}</div> 
         <div class="total-price" style="margin-right: 70px;">${price}</div> 
         <div class="quantity" style="margin-right: 70px;">${quantity}</div>
-        <div>
-            <span class="remove" style="cursor: pointer; background-color: red; ">X</span>
-        </div> 
-    </div>
-`; 
+        
+        <span class="remove">X</span>
+         
+    </div>`;
 
 cartContainer.appendChild(cartItem); 
 
     cartItem.querySelector('.remove').addEventListener('click', function() {
         cartItem.remove();
+        counter-=1;
+        itemCouner.textContent=counter;
     });
 }
 

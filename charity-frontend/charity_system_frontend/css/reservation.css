@@ -16,10 +16,13 @@
     line-height: 1.8;
 }
 .rev-btn{
-    margin-left:  150px;
+    display: flex;
+    flex-direction: column;
+    
 }
+
 .rev-btn button{
-    border-radius: 10%;
+    border-radius: 4%;
     border-color:rgb(32, 80, 32) ;
     background-color: rgb(32, 80, 32);
     color: whitesmoke;
@@ -28,8 +31,8 @@
     box-shadow: 0px 0px 10px rgba(208, 234, 219, 0.5),
     0px 0px 15px rgba(17, 99, 52, 0.5),
     0px 0px 25px rgba(141, 198, 166, 0.5);
-    padding: 4px 20px;
-    margin: 10px 20px;
+    width: 180px;
+    margin: 15px 350px;
 }
 .rev-btn button:hover{
     background-color: rgb(2, 55, 2);
@@ -40,4 +43,18 @@
 .icon-cart{
     display: flex;
     justify-content: space-between;
+}
+@media(max-width:480px){
+    .description{
+        margin: 15px 20px;
+        width: 90%;
+        
+    }
+    .rev-btn button{
+       
+        margin: 15px 120px;
+    }
+    .heading{
+        height: 50px;
+    }
 }

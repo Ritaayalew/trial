@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Enredada</title>
     <link
       rel="stylesheet"
       href="./node_modules/bootstrap/css/bootstrap.min.css"
@@ -25,18 +25,20 @@
                 <li class="me-3"><a href="index.html" class="text-decoration-none text-white">Home</a></li>
                 <li class="me-3"><a href="shop.html" class="text-decoration-none text-white">Shop</a></li>
                 <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="signup()">Volunteer</a></li>
+                <li class="me-3"><a href="./reservation.html" class="text-decoration-none text-white">Reservation</a></li>
                 <li class="me-3"><a href="#" class="text-decoration-none text-white" onclick="admin()">Admin-Dashboard</a></li>
                 <li class=" login me-3"><a href="#" class="text-decoration-none text-white border rounded bg-success" onclick="login()" style="width: 150px;">Login</a></li>
             </ul>
     </header>
       </div> 
             <div class="container"> 
-              <div class="d-flex">
-                <h2>Product List</h2>
+              <div class="List">
+                <div><h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; ">Product List</h3></div>
                 <div class="icon-cart">
-                <img src="./photos/cart.png" style="height: 50px; margin-right: 10px;" onclick="cartIcon()">
-                <!-- <span id="counter">0</span>  -->
-            </div></div>
+                  <img src="./photos/cart.png" style="height: 50px; margin-right: 10px;" onclick="cartIcon()">
+                  <span id="counter">0</span> 
+                </div>
+              </div>
             <section class="sec1" id="productContainer"> 
               <div class="item">
                <div class="image"> 
@@ -61,19 +63,7 @@
                      
     </main>
 
-    <!-- <script>
-      let itemCount = 0; // Initialize itemCount
-
-      function addToCart(button) {
-          itemCount += 1; // Increment itemCount
-          let counterElement = document.getElementById('counter');
-          if (counterElement) {
-              counterElement.textContent = itemCount; // Update the counter display
-          } else {
-              console.error('Element with ID "counter" not found.');
-          }
-      }
-  </script> -->
+    
     <div class="cart-tab" id="cart-tab">
       <h2 style="color: whitesmoke; background-color: rgb(28, 53, 33); text-align: center;">Shopping Cart</h2>
       <div class="listCart" id="cartContainer"></div>
