@@ -1,4 +1,4 @@
-.sec1{
+#productContainer{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -114,14 +114,6 @@
     list-style-type: none;
     text-align: left;
     padding-right: 70px;
-}
-.sec1{
-    width: 250px;
-    background-color: bisque;
-    color: black;
-    font-weight: 700;
-    text-align: center;
-
 }
 .sec1 .item img{
     width: 90%;

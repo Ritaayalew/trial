@@ -31,9 +31,12 @@
             </ul>
     </header>
       </div>
-      <div class="container">
+
+      <div class="container-main">
         
       </div>
+
+
       <div class="description">
         <p>
           Celebrate your special moments with us and the cherished elders of our charity association!
@@ -43,8 +46,8 @@
      
         </p>  
       <div class="rev-btn">
-        <button>reveiw event</button>
-        <button onclick="reservation()" >reserve event</button>
+        <button id="review">Upcoming events</button>
+        <button id="reserve" onclick="reservation()" >Make reservation</button>
       </div>
     </div>
    </main>
@@ -85,7 +88,7 @@
         <div id="signupError4" class="error-message"></div>
 
         <div class="form-group">
-            <label for="detail">Additional Details</label>
+            <label for="detail">Event Details</label>
             <textarea class="form-control custom-size" id="services" placeholder="Text Here"></textarea>
         </div>
 
@@ -289,6 +292,8 @@
       <script src="./dist/add-product.js" type="module"></script>
       <script src="./dist/delete-product.js" type="module"></script>
       <script src="./dist/update-product.js" type="module"></script>
+      <script src="./dist/add-reservation.js" type="module"></script>
+      <script src="./dist/display-reservations.js" type="module"></script>
     </body>
   </html>
   
