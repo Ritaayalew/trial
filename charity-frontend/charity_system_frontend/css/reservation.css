@@ -1,7 +1,7 @@
 .description{
     border: solid 0.1px #b2d4c2;
     width: 750px;
-    background-color: #b2d4c2; 
+    background-color: #e7e7e7; 
     margin: 20px 150px;
     border-radius: 3%;
 
@@ -26,4 +26,21 @@
 .icon-cart{
     display: flex;
     justify-content: space-between;
+}
+.container-main{
+    display: none;
+    padding: 30px;
+    flex-wrap: wrap;
+    background-color: #d9d9d9;
+    margin: 0 6%;
+    justify-content: center;
+}
+.card{
+    width: 250px;
+    margin: 0 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+
+}
+.pin{
+    width: 20px;
 }

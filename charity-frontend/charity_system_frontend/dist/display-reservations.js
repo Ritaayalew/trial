@@ -8,49 +8,48 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function fetchProducts() {
+var _a;
+function fetchReservations() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('http://localhost:3000/api/products', {
+            const response = yield fetch('http://localhost:3000/api/reservation', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
             if (!response.ok) {
-                throw new Error('Failed to fetch products');
+                throw new Error('Failed to fetch reservations');
             }
             return yield response.json();
         }
         catch (error) {
-            console.error('Error fetching products:', error);
+            console.error('Error fetching reservations:', error);
             return [];
         }
     });
 }
-function createProductCard(product) {
-    console.log(product.imageUrl);
+function createReservationCard(reservation) {
     return `
-        <article class="cls1">
-            <img src="${product.imageUrl}" alt="Product Image">
-            <ul>
-                <li>Name: ${product.name}</li>
-                <li>Price: ${product.price} birr</li>
-                <li>Category: ${product.category}</li>
-                <li>Quantity: ${product.quantity}</li>
-                <button onclick="addToCart(this)" style="background-color: rgb(115, 101, 84); border-color:rgb(115, 101, 84);">Add to cart</button>
-            </ul>
-        </article>
+        <div class="card mb-3">
+            <div class="card-body">
+                <img class="pin" src="./photos/pin.png"/>
+                <p class="card-text"><b>Event:</b> ${reservation.eventDetails}</p>
+                <p class="card-text"><b>Date:</b> ${reservation.date}</p>
+                <p class="card-text"><b>Time: </b>${reservation.time}</p>
+            </div>
+        </div>
     `;
 }
-function displayProducts() {
+function displayReservations() {
     return __awaiter(this, void 0, void 0, function* () {
-        const products = yield fetchProducts();
-        console.log(products);
-        const productContainer = document.getElementById('productContainer');
-        if (productContainer) {
-            productContainer.innerHTML = products.map(createProductCard).join('');
+        const reservations = yield fetchReservations();
+        const container = document.querySelector('.container-main');
+        if (container) {
+            container.innerHTML = reservations.map(createReservationCard).join('');
+            container.style.display = "flex";
+
         }
     });
 }
-document.addEventListener('DOMContentLoaded', displayProducts);
+(_a = document.getElementById('review')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', displayReservations);
