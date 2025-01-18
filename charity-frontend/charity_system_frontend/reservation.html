@@ -41,131 +41,63 @@
       </div>
       <div class="rev-btn">
         <button>reveiw event</button>
-        <button>reserve event</button>
+        <button onclick="reservation()" >reserve event</button>
       </div>
    </main>
       
+  
+
+
    <div class="container mt-5">
-    <form id="signupForm" class="modal-form p-4 rounded">
-        <h2 class="text-center mb-4">Sign Up</h2>
-        <div id="signupError" class="error-message"></div>
+    <form id="reservationForm" class="modal-form p-4 rounded">
+        <h2 class="text-center mb-4">Reservation</h2>
+        <div id="reservationError" class="error-message"></div>
 
         <div class="form-group">
-        <label for="fullname">Fullname</label>
-        <input
-            type="text"
-            class="form-control custom-size"
-            id="fullname"
-            placeholder="Enter your name"
-            required
-        />
+            <label for="fullname">Fullname</label>
+            <input type="text" class="form-control custom-size" id="fullname" placeholder="Enter your name" required />
         </div>
 
         <div class="form-group">
-        <label for="signupemail">Email address</label>
-        <input
-            type="email"
-            class="form-control custom-size"
-            id="signupemail"
-            placeholder="Enter email"
-            required
-        />
+            <label for="reservationemail">Email address</label>
+            <input type="email" class="form-control custom-size" id="signupemail" placeholder="Enter email" required />
         </div>
 
         <div class="form-group">
-        <label for="phone">Phone</label>
-        <input
-            type="tel"
-            class="form-control custom-size"
-            id="phone"
-            placeholder="Enter phone number"
-            required
-        />
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control custom-size" id="phone" placeholder="Enter phone number" required />
         </div>
 
         <div class="form-group">
-        <label for="passwordSignup">Password</label>
-        <input
-            type="password"
-            class="form-control custom-size"
-            id="passwordSignup"
-            placeholder="Password"
-            required
-        />
+            <label for="date">Date</label>
+            <input type="date" class="form-control custom-size" id="date" required />
         </div>
 
         <div class="form-group">
-        <label for="confirmSignup">Confirm Password</label>
-        <input
-            type="password"
-            class="form-control custom-size"
-            id="confirmSignup"
-            placeholder="Confirm Password"
-            required
-        />
+            <label for="time">Time</label>
+            <input type="time" class="form-control custom-size" id="time" required />
         </div>
 
         <div id="signupError4" class="error-message"></div>
 
         <div class="form-group">
-        <label for="services">Services</label>
-        <textarea
-            class="form-control custom-size"
-            id="services"
-            placeholder="Text Here"
-        ></textarea>
+            <label for="detail">Additional Details</label>
+            <textarea class="form-control custom-size" id="services" placeholder="Text Here"></textarea>
         </div>
 
-        <div id="signupError2" class="error-message"></div>
+        <div id="reservationError2" class="error-message"></div>
 
         <div class="form-group">
-        <div class="d-flex justify-content-end">
-            <button
-            type="submit"
-            class="btn btn-success me-2"
-            onclick="validateSignup()"
-            >
-            Sign Up
-            </button>
-            <button type="button" class="btn btn-danger" onclick="closeForm()">
-            Close
-            </button>
-        </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-success me-2" onclick="validateReservation()">Confirm</button>
+                <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+            </div>
         </div>
     </form>
-    </div>
-    <div class="form-group">
-      <label for="fullname">Fullname</label>
-      <input
-          type="text"
-          class="form-control custom-size"
-          id="fullname"
-          placeholder="Enter your name"
-          required
-      />
-      </div>
+</div>
 
-      <div class="form-group">
-      <label for="signupemail">Email address</label>
-      <input
-          type="email"
-          class="form-control custom-size"
-          id="signupemail"
-          placeholder="Enter email"
-          required
-      />
-      </div>
 
-      <div class="form-group">
-      <label for="phone">Phone</label>
-      <input
-          type="tel"
-          class="form-control custom-size"
-          id="phone"
-          placeholder="Enter phone number"
-          required
-      />
-      </div>
+
 
 
 
@@ -302,7 +234,7 @@
         </div>
         </div>
     </form>
-    </div>
+    </div> 
    
     <footer class="bg-dark text-white py-4">
         <div class="container">
