@@ -10,6 +10,12 @@ function signup() {
     form.style.display = "block";
     mainContent.classList.add('blur-background'); 
 }
+function reservation() {   
+    const form = document.getElementById('reservationForm');
+    const mainContent = document.querySelector('main');
+    form.style.display = "block";
+    mainContent.classList.add('blur-background'); 
+}
 
 function login() {
     const form = document.getElementById('loginForm');
@@ -40,6 +46,11 @@ function closeForm() {
     const mainContentss = document.querySelector('main');
     formss.style.display = "none"; 
     mainContentss.classList.remove('blur-background'); 
+
+    const reserve = document.getElementById('reservationForm');
+    const reservContents = document.querySelector('main');
+    reserve.style.display = "none"; 
+    reservContents.classList.remove('blur-background');
 }
 
 
