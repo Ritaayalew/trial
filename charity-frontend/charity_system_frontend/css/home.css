@@ -49,10 +49,11 @@
    
 }
 .content-box p {
-    
+    width: 50%;
     border-radius: 10px;
     font-family:fantasy; color:rgb(5, 75, 5); padding: 10px;
     margin: 10px;
+    padding: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
     0 4px 20px rgba(55, 109, 76, 0.1); 
     font-size: 16px;
@@ -63,9 +64,10 @@
 }
 
 .container h3{
-    font-family:fantasy; font-weight: 700;  
-    font-size: 20px; color:rgb(9, 159, 9); 
-    padding: 10px;
+    font-family:fantasy; font-weight: 300;  
+    font-size: 20px; color:rgb(38, 38, 38); 
+    padding: 20px;
+    text-align: center;
 }
 .container h5{
     color: green;
