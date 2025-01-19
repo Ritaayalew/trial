@@ -12,7 +12,7 @@ async function registerVolunteer() {
     const emailInput = document.getElementById('signupemail') as HTMLInputElement;
     const phoneInput = document.getElementById('phone') as HTMLInputElement;
     const passwordInput = document.getElementById('passwordSignup') as HTMLInputElement;
-    const servicesInput = document.querySelector('textarea') as HTMLTextAreaElement;
+    const servicesInput = document.getElementById('services') as HTMLTextAreaElement;
 
     const volunteerData = {
         fullName: fullnameInput.value,

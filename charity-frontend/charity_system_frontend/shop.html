@@ -50,6 +50,46 @@
                      
     </main>
 
+
+
+
+    <div class="container mt-5">
+      <form id="orderForm" class="modal-form p-4 rounded">
+          <h2 class="text-center mb-4">Delivery Details</h2>
+          <div id="orderError" class="error-message"></div>
+  
+          <div class="form-group">
+              <label for="fullname">Fullname</label>
+              <input type="text" class="form-control custom-size"placeholder="Enter your name" required />
+          </div>
+  
+  
+          <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control custom-size"  placeholder="Enter phone number" required />
+          </div>
+  
+          <div id="orderError4" class="error-message"></div>
+  
+          <div class="form-group">
+              <label for="adress">Adress</label>
+              <textarea class="form-control custom-size"  placeholder="Text Here"></textarea>
+          </div>
+  
+          <div id="orderError2" class="error-message"></div>
+  
+          <div class="form-group">
+              <div class="d-flex justify-content-end">
+                  <button type="submit" class="btn btn-success me-2" onclick="validateReservation()">Confirm</button>
+                  <button type="button" class="btn btn-danger" onclick="deliveryClose()">Close</button>
+              </div>
+          </div>
+      </form>
+  </div>
+  
+  
+
+
     
     <div class="cart-tab" id="cart-tab">
       <h2 style="color: whitesmoke; background-color: rgb(28, 53, 33); text-align: center; padding: 12px 0;">Shopping Cart</h2>
@@ -59,7 +99,7 @@
         <button type="button" class="btn btn-danger" onclick="shopClose()">
           Close
           </button>
-        <button class="btn btn-secondary">confirm</button>
+        <button class="btn btn-secondary" id="confirm-order" onclick="confirmOrder()">confirm</button>
       </div>
     </div>
   </div>

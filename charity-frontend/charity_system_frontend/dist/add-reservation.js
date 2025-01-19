@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reservationForm) {
         reservationForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, function* () {
             event.preventDefault();
-            const fullName = document.getElementById('fullname');
-            const email = document.getElementById('signupemail');
-            const phone = document.getElementById('phone');
+
+            const fullName = document.getElementById('reservationfullname');
+            const email = document.getElementById('reservationemail');
+            const phone = document.getElementById('reservationphone');
             const date = document.getElementById('date');
             const time = document.getElementById('time');
-            const eventDetails = document.getElementById('services');
+            const eventDetails = document.getElementById('eventdetail');
+
             const reservationData = {
                 reserverName: fullName.value,
                 reserverPhone: phone.value,

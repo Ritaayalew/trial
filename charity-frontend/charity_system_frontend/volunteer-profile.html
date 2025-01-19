@@ -64,27 +64,24 @@
                 >Admin-Dashboard</a
               >
             </li>
-            <li class="login me-3">
-              <a
-                href="#"
-                class="text-decoration-none text-white border rounded bg-success"
-                onclick="login()"
-                style="width: 150px"
-                >Login</a
-              >
-            </li>
+           
           </ul>
         </div>
       </div>
-      <button
+      <div class="profile-btns custom-margin-right float-end d-flex flex-column ">
+        <button
         type="button"
-        class="btn btn-success custom-margin-right float-end"
+        class="btn btn-success mb-3 "
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        EDIT PROFILE
+        Edit Profile
       </button>
+      <a href="#" class=" logout-btn text-decoration-none text-white fs-lg-5 rounded bg-danger p-2 text-center"
+      onclick="showLogoutModal()">Logout</a>
 
+      </div>
+      
       <div
         class="modal fade"
         id="exampleModal"
@@ -96,6 +93,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">EDIT PROFILE</h5>
+              
+               
+              
               <button
                 type="button"
                 class="btn-close"
@@ -177,6 +177,29 @@
         </div>
       </div>
     </main>
+
+
+
+    <div class="container mt-5">
+      <form id="logoutForm" class="modal-formLogout p-4 rounded">
+        <div class="text-center align-items-center"> <p>Are you sure you want to logout?</p>
+          <a 
+          id="logoutYes" 
+          class="btn btn-success me-2" 
+          href="#" 
+          onclick="logout(event)" 
+          > Yes 
+      </a>
+           <button onclick="logoutClose()" class="btn btn-danger me-2" >No</button> 
+           
+          </div>
+        </form>
+      </div>
+
+
+
+
+
     <div class="container mt-5">
       <form id="signupForm" class="modal-form p-4 rounded">
         <h2 class="text-center mb-4">Sign Up</h2>
@@ -391,6 +414,7 @@
 </footer>
   <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
   <script src="./dist/volunteer-profile.js" type="module"></script>
+  <script src="./logout.js" ></script>
   <script src="./dist/volunteer-editProfile.js" type="module"></script>
   <script src="../js/bootstrap.bundle.min.js"></script>
 </body>

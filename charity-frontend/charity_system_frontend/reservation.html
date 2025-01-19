@@ -71,17 +71,17 @@
 
         <div class="form-group">
             <label for="fullname">Fullname</label>
-            <input type="text" class="form-control custom-size" id="fullname" placeholder="Enter your name" required />
+            <input type="text" class="form-control custom-size" id="reservationfullname" placeholder="Enter your name" required />
         </div>
 
         <div class="form-group">
             <label for="reservationemail">Email address</label>
-            <input type="email" class="form-control custom-size" id="signupemail" placeholder="Enter email" required />
+            <input type="email" class="form-control custom-size" id="reservationemail" placeholder="Enter email" required />
         </div>
 
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" class="form-control custom-size" id="phone" placeholder="Enter phone number" required />
+            <input type="tel" class="form-control custom-size" id="reservationphone" placeholder="Enter phone number" required />
         </div>
 
         <div class="form-group">
@@ -94,11 +94,11 @@
             <input type="time" class="form-control custom-size" id="time" required />
         </div>
 
-        <div id="signupError4" class="error-message"></div>
+        <div id="reservationError4" class="error-message"></div>
 
         <div class="form-group">
             <label for="detail">Event Details</label>
-            <textarea class="form-control custom-size" id="services" placeholder="Text Here"></textarea>
+            <textarea class="form-control custom-size" id="eventdetail" placeholder="Text Here"></textarea>
         </div>
 
         <div id="reservationError2" class="error-message"></div>
@@ -117,53 +117,98 @@
 
 
 
-      <div class="container mt-5">
-        <form id="signupForm" class="modal-form p-4 rounded">
-            <h2 class="text-center mb-4">Sign Up</h2>
-            <div id="signupError" class="error-message"></div>
-    
-            <div class="form-group">
-                <label for="fullname">Fullname</label>
-                <input type="text" class="form-control custom-size" id="fullname" placeholder="Enter your name" required />
-            </div>
-    
-            <div class="form-group">
-                <label for="signupemail">Email address</label>
-                <input type="email" class="form-control custom-size" id="signupemail" placeholder="Enter email" required />
-            </div>
-    
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" class="form-control custom-size" id="phone" placeholder="Enter phone number" required />
-            </div>
-    
-            <div class="form-group">
-                <label for="date">Date</label>
-                <input type="date" class="form-control custom-size" id="date" required />
-            </div>
-    
-            <div class="form-group">
-                <label for="time">Time</label>
-                <input type="time" class="form-control custom-size" id="time" required />
-            </div>
-    
-            <div id="signupError4" class="error-message"></div>
-    
-            <div class="form-group">
-                <label for="services">Services</label>
-                <textarea class="form-control custom-size" id="services" placeholder="Text Here"></textarea>
-            </div>
-    
-            <div id="signupError2" class="error-message"></div>
-    
-            <div class="form-group">
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-success me-2" onclick="validateReservation()">Confirm</button>
-                    <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
-                </div>
-            </div>
-        </form>
-    </div>
+     
+<div class="container mt-5">
+  <form id="signupForm" class="modal-form p-4 rounded">
+      <h2 class="text-center mb-4">Sign Up</h2>
+      <div id="signupError" class="error-message"></div>
+
+      <div class="form-group">
+      <label for="fullname">Fullname</label>
+      <input
+          type="text"
+          class="form-control custom-size"
+          id="fullname"
+          placeholder="Enter your name"
+          required
+      />
+      </div>
+
+      <div class="form-group">
+      <label for="signupemail">Email address</label>
+      <input
+          type="email"
+          class="form-control custom-size"
+          id="signupemail"
+          placeholder="Enter email"
+          required
+      />
+      </div>
+
+      <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+          type="tel"
+          class="form-control custom-size"
+          id="phone"
+          placeholder="Enter phone number"
+          required
+      />
+      </div>
+
+      <div class="form-group">
+      <label for="passwordSignup">Password</label>
+      <input
+          type="password"
+          class="form-control custom-size"
+          id="passwordSignup"
+          placeholder="Password"
+          required
+      />
+      </div>
+
+      <div id="signupError5" class="error-message"></div>
+
+      <div class="form-group">
+      <label for="confirmSignup">Confirm Password</label>
+      <input
+          type="password"
+          class="form-control custom-size"
+          id="confirmSignup"
+          placeholder="Confirm Password"
+          required
+      />
+      </div>
+
+      <div id="signupError4" class="error-message"></div>
+
+      <div class="form-group">
+      <label for="services">Services</label>
+      <textarea
+          class="form-control custom-size"
+          id="services"
+          placeholder="Text Here"
+      ></textarea>
+      </div>
+
+      <div id="signupError2" class="error-message"></div>
+
+      <div class="form-group">
+      <div class="d-flex justify-content-end">
+          <button
+          type="submit"
+          class="btn btn-success me-2"
+          onclick="validateSignup()"
+          >
+          Sign Up
+          </button>
+          <button type="button" class="btn btn-danger" onclick="closeForm()">
+          Close
+          </button>
+      </div>
+      </div>
+  </form>
+  </div>
     
 
 
@@ -297,12 +342,15 @@
         crossorigin="anonymous"
       ></script>
       <script src="./index.js"></script>
+      <script src="./dist/home.js" type="module"></script>
       <script src="./dist/volunteerLogin.js" type="module"></script>
       <script src="./dist/add-product.js" type="module"></script>
       <script src="./dist/delete-product.js" type="module"></script>
       <script src="./dist/update-product.js" type="module"></script>
       <script src="./dist/add-reservation.js" type="module"></script>
       <script src="./dist/display-reservations.js" type="module"></script>
+      
+
     </body>
   </html>
   

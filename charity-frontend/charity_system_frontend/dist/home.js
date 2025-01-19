@@ -21,7 +21,8 @@ function registerVolunteer() {
         const emailInput = document.getElementById('signupemail');
         const phoneInput = document.getElementById('phone');
         const passwordInput = document.getElementById('passwordSignup');
-        const servicesInput = document.querySelector('textarea');
+        const servicesInput = document.getElementById('services');
+        const signupError = document.getElementById('signupError5');
         const volunteerData = {
             fullName: fullnameInput.value,
             email: emailInput.value,
@@ -46,6 +47,9 @@ function registerVolunteer() {
             }
             else {
                 const error = yield response.json();
+                if (response.status === 400) { 
+                    signupError.innerHTML = error.message[0];
+                    }
                 console.error('Error registering volunteer:', error);
                 // Handle error (e.g., show an error message)
             }

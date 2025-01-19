@@ -1,0 +1,62 @@
+body{
+  margin: 0px;
+  padding: 0px;
+ 
+}
+.main-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5em;
+}
+.headline{
+  color: green;
+}
+.list-item{
+  display: flex;
+  flex-direction: row;
+}
+.list-dropdown{
+  width: 300px;
+  height: 400px;
+  
+}
+
+.dropdown-button{
+  margin-left: 5.5em;
+}
+.card-wrapper {
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  column-gap: 15px;
+  justify-content: center;
+}
+.collapsible-content {
+  display: none;
+}
+.container-card{
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.2);
+  margin-top: -22px;
+}
+img.logo{
+  width: 70px;
+}
+.logo-cbe{
+  width: 50px;
+}
+.donation-option{
+  display: grid;
+  grid-template-columns: 75px 1fr;
+}
+.donation-option div{
+  display: flex;
+  flex-direction: column;
+}
+.donation-option p{
+  margin: 0px;
+  padding: 0px;
+}
+.acc{
+  font-size: 15px;
+  color: rgb(158, 158, 158);
+}

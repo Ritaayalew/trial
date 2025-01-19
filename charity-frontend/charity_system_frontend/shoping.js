@@ -10,6 +10,22 @@ function shopClose(){
     const mainContet = document.querySelector('main');
     carts.style.display = "none"; 
     mainContet.classList.remove('blur-background'); 
+
+}
+function deliveryClose(){
+    const fform = document.getElementById('orderForm');
+    const mainContet = document.querySelector('main');
+    fform.style.display = "none"; 
+    mainContet.classList.remove('blur-background'); 
+}
+
+function confirmOrder() {   
+    const form = document.getElementById('orderForm');
+    const mainContent = document.querySelector('main');
+    const shopOrder = document.getElementById('cart-tab');
+    shopOrder.style.display = "none"; 
+    form.style.display = "block";
+    mainContent.classList.add('blur-background'); 
 }
 
 let counter=0;

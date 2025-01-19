@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
         reservationForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            const fullName = document.getElementById('fullname') as HTMLInputElement;
-            const email = document.getElementById('signupemail') as HTMLInputElement;
-            const phone = document.getElementById('phone') as HTMLInputElement;
+            const fullName = document.getElementById('reservationfullname') as HTMLInputElement;
+            const email = document.getElementById('reservationemail') as HTMLInputElement;
+            const phone = document.getElementById('reservationphone') as HTMLInputElement;
             const date = document.getElementById('date') as HTMLInputElement;
             const time = document.getElementById('time') as HTMLInputElement;
-            const eventDetails = document.getElementById('services') as HTMLTextAreaElement;
+            const eventDetails = document.getElementById('eventdetail') as HTMLTextAreaElement;
 
             const reservationData = {
                 reserverName: fullName.value,
