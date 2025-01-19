@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RegisterVolunteerDTO } from 'src/DTO/register-volunteer.dto';
 import { VolunteerEntity } from 'src/Entity/volunteer.entity';
@@ -116,5 +116,8 @@ export class AuthService {
     //     return this.repo.findOne({ where: { email } });
     // }
     
+
+
+
 
 }

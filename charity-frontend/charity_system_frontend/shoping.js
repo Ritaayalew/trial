@@ -13,6 +13,7 @@ function shopClose(){
 }
 
 let counter=0;
+let totalPrice=0;
 function addToCart(button) { 
     counter+=1;
     var itemCouner=document.getElementById('counter')
@@ -21,6 +22,16 @@ function addToCart(button) {
     var image = item.querySelector('.image').src; 
     var name = item.querySelector('.name').textContent;
     var price = item.querySelector('.total-price').textContent;
+    var total=document.querySelector('.total');
+
+    var newPrice = parseFloat(price.replace(/[^0-9.]/g, '')); // Remove all non-numeric characters except the decimal point 
+    console.log(typeof newPrice);
+
+    totalPrice+=newPrice;
+    console.log(totalPrice);
+    total.textContent=`Total price: ${totalPrice} birr`;
+
+    
     var category = item.querySelector('.category').textContent; 
     var cartContainer = document.getElementById('cartContainer'); 
     var cartItem = document.createElement('div'); 
@@ -44,6 +55,9 @@ cartContainer.appendChild(cartItem);
     cartItem.querySelector('.remove').addEventListener('click', function() {
         cartItem.remove();
         counter-=1;
+        totalPrice-=newPrice;
+        console.log(totalPrice);
+        total.textContent=`Total price: ${totalPrice} birr`;
         itemCouner.textContent=counter;
     });
 }

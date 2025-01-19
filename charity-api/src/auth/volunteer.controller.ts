@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Patch, UseGuards, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Patch, UseGuards, ValidationPipe } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { User } from "./user.decorator";
 import { AuthGuard } from "@nestjs/passport";
@@ -32,6 +32,7 @@ export class VolunteerController {
     @Body('updateProfileDTO', ValidationPipe) updateProfileDTO: UpdateProfileDTO){
     return this.authService.updateProfile(email, updateProfileDTO);
   }
+
 
 }
 

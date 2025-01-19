@@ -132,6 +132,10 @@
     justify-content: center;
 
 }
+.total{
+    text-align: center;
+    font-weight: 700;
+}
 
 @media (max-width: 480px) {
     .cart-tab{
