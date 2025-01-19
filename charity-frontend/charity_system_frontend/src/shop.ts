@@ -33,8 +33,8 @@ function createProductCard(product: Product) {
         <article class="cls1">
             <img src="${product.imageUrl}" alt="Product Image">
             <ul>
-                <li class="name" >Name: ${product.name}</li>
-                <li class="total-price" >Price: ${product.price} birr</li>
+                <li class="name" >Name:${product.name}</li>
+                <li class="total-price" >Price: ${product.price}birr</li>
                 <li class="category" >Category: ${product.category}</li>
                 <li>Quantity: ${product.quantity}</li>
                 <button onclick="addToCart(this)" style="background-color: rgb(115, 101, 84); border-color:rgb(115, 101, 84);">Add to cart</button>

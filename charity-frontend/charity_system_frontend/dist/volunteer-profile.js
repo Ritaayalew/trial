@@ -52,6 +52,3 @@ function updateProfile(data) {
         servicesElement.textContent = data[0].services;
 }
 document.addEventListener('DOMContentLoaded', fetchProfile);
-
-
-

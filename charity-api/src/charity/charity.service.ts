@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AddItemDto } from 'src/DTO/add-product.dto';
 import { UpdateItemDto } from 'src/DTO/update-product.dto';
@@ -37,13 +37,28 @@ export class CharityService {
         return this.repo.findOne({where:{id}});
     }
 
-    async deleteProduct(id:number){
-        try{
-            return await this.repo.delete({id});
-        } catch(err){
+    // async deleteProduct(id:number){
+    //     try{
+    //         return await this.repo.delete({id});
+    //     } catch(err){
+    //         throw new InternalServerErrorException('Something went wrong');
+    //     }
+        
+    // }
+
+
+
+    async deleteProduct(id: number) {
+        try {
+            const result= await this.repo.delete({ id });
+
+            if (result.affected === 0) {
+                throw new NotFoundException(`Product with id ${id} not found`);
+            }
+        } catch (err) {
             throw new InternalServerErrorException('Something went wrong');
         }
-        
     }
+
 
 }

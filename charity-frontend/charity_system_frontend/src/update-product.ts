@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         } catch (error) {
             console.error('Error updating product:', error);
-            alert('Error updating product. Please try again.');
+            alert(`Product with ID ${productId} not found. Please check the ID and try again.`);
         }
     });
 });

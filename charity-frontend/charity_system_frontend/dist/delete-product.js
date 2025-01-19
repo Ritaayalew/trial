@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         catch (error) {
             console.error('Error deleting product:', error);
-            alert('Error deleting product. Please try again.');
+            alert(`Product with ID ${productId} not found. Please check the ID and try again.`);
+
         }
     }));
 });

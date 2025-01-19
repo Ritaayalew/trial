@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 const errorMessage = await response.text();
+                console.log(response);
                 console.error('Error message from server:', errorMessage);
                 throw new Error('Failed to delete product');
+                
             }
 
             console.log('Product deleted successfully');
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         } catch (error) {
             console.error('Error deleting product:', error);
-            alert('Error deleting product. Please try again.');
+            alert(`Product with ID ${productId} not found. Please check the ID and try again.`);
         }
     });
 });
