@@ -17,23 +17,24 @@ function addToCart(button) {
     counter+=1;
     var itemCouner=document.getElementById('counter')
     itemCouner.textContent=counter;
-    var item = button.closest('.item');
-    var image = item.querySelector('.image img').src; 
+    var item = button.closest('.cls1');
+    var image = item.querySelector('.image').src; 
     var name = item.querySelector('.name').textContent;
     var price = item.querySelector('.total-price').textContent;
-    var quantity = item.querySelector('.quantity').textContent; 
+    var category = item.querySelector('.category').textContent; 
     var cartContainer = document.getElementById('cartContainer'); 
     var cartItem = document.createElement('div'); 
     // cartItem.classList.add('item');
     cartItem.innerHTML = ` 
-    <div class="cart-item d-flex" style="display: flex; align-items: center;"> 
-        <div class="image" style="margin-right:70px;"> 
-            <img src="${image}" style="background-color: aliceblue;"> 
+    <div class="cart-item" style="display: flex; align-items: center;"> 
+        <div class="image-div" style="margin-right:70px;"> 
+            <img class="checkout-image" src="${image}" style="background-color: aliceblue; width:100px;"> 
         </div> 
-        <div class="name" style="margin-right: 70px;">${name}</div> 
-        <div class="total-price" style="margin-right: 70px;">${price}</div> 
-        <div class="quantity" style="margin-right: 70px;">${quantity}</div>
-        
+        <div class="item-info" >
+            <div class="name" >${name}</div> 
+            <div class="total-price" >${price}</div> 
+            <div class="category" >${category}</div>
+        </div>
         <span class="remove">X</span>
          
     </div>`;

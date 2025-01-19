@@ -1,33 +1,43 @@
 .description{
-    border: solid 0.1px #b2d4c2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 750px;
-    background-color: #e7e7e7; 
-    margin: 20px 150px;
+    background-color: #f5f5f5; 
+    margin: 70px auto;
     border-radius: 2%;
     font-weight: 600;
     font-size: 15px;
-    box-shadow: 0px 0px 10px rgba(35, 59, 45, 0.5),
+    box-shadow: 0px 0px 7px rgba(6, 7, 6, 0.7),
     0px 0px 15px rgba(38, 71, 52, 0.5),
     0px 0px 25px rgba(141, 198, 166, 0.5);
 }
 .description p{
+    font-family: cursive;
     margin: 30px 35px;
     letter-spacing: 0.05em;
     line-height: 1.8;
 }
+.description p span{
+    color: rgb(0, 166, 11);
+}
 .rev-btn{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
     
 }
 
 .rev-btn button{
-    border-radius: 4%;
+    border-radius: 7%;
     border-color:rgb(32, 80, 32) ;
-    background-color: rgb(32, 80, 32);
+    background-color: rgb(1, 18, 1);
     color: whitesmoke;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 17px;
     box-shadow: 0px 0px 10px rgba(208, 234, 219, 0.5),
     0px 0px 15px rgba(17, 99, 52, 0.5),
     0px 0px 25px rgba(141, 198, 166, 0.5);
@@ -40,9 +50,33 @@
     0px 0px 15px rgba(17, 99, 52, 0.5),
     0px 0px 25px rgba(141, 198, 166, 0.5);
 }
-.icon-cart{
+/* .icon-cart{
     display: flex;
     justify-content: space-between;
+} */
+.container-main{
+    display: none;
+    padding: 40px 30px 60px;
+    flex-wrap: wrap;
+    background-color: #d9d9d9;
+    margin: 0 8%;
+    justify-content: center;
+}
+.card{
+    width: 250px;
+    margin: 0 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+
+}
+.pin{
+    width: 20px;
+}
+.hearts{
+    margin: -15px 0 40px;
+}
+.fa-solid{
+    color: red;
+    font-size: 20px;
 }
 @media(max-width:480px){
     .description{

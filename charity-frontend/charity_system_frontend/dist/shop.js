@@ -32,13 +32,15 @@ function createProductCard(product) {
     console.log(product.imageUrl);
     return `
         <article class="cls1">
-            <img src="${product.imageUrl}" alt="Product Image">
+            <img class="image" src="${product.imageUrl}" alt="Product Image">
             <ul>
-                <li>Name: ${product.name}</li>
-                <li>Price: ${product.price} birr</li>
-                <li>Category: ${product.category}</li>
+                <li class="name" >Name: ${product.name}</li>
+                <li class="total-price" >Price: ${product.price} birr</li>
+                <li class="category" >Category: ${product.category}</li>
                 <li>Quantity: ${product.quantity}</li>
-                <button onclick="addToCart(this)" style="background-color: rgb(115, 101, 84); border-color:rgb(115, 101, 84);">Add to cart</button>
+                <div style="text-align: center;">
+                    <button onclick="addToCart(this)" style="background-color: rgb(104, 104, 104); width:115px; border-color:rgb(115, 101, 84); border-radius:12px; margin: 10px 20px; color: white;">Add to cart</button>
+                </div>
             </ul>
         </article>
     `;

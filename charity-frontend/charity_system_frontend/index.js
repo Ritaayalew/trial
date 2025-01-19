@@ -118,12 +118,15 @@ function validateLogin() {
 }
 
 
-function validateAdmin() {
+
+function validateAdmin(event) {
+    event.preventDefault();
     const secretKey = "Admin123@";
     const adminEmail = document.getElementById('adminEmail').value;
     const adminPassword = document.getElementById('secretkey').value;
     const adminError4 = document.getElementById('adminError4');
     const adminError = document.getElementById('adminError');
+    const loginLink = document.getElementById('loginLink');
 
     adminError4.textContent = ''; 
 
@@ -136,15 +139,15 @@ function validateAdmin() {
         return false;
     }
     if (adminPassword !== secretKey) {
-        adminError4.textContent = 'Incorrect Secret Key';
+        adminError4.textContent = 'Incorrect credentials';
         return false;
     }
-    if (adminPassword == secretKey){
-        console.log("Redirecting to admin dashboard");
-        window.location.assign('./Admin.html');
+    if (adminPassword == secretKey) {
+        loginLink.href = './Admin.html';
+        window.location.href = loginLink.href;
+        
     }
 
-    
     return true;
 }
 

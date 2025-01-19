@@ -243,13 +243,15 @@
 
         <div class="form-group">
         <div class="d-flex justify-content-end">
-            <button
-            type="submit"
-            class="btn btn-success me-2"
-            onclick="validateAdmin()"
-            >
-            Login
-            </button>
+
+            <a 
+                id="loginLink" 
+                class="btn btn-success me-2" 
+                href="#" 
+                onclick="validateAdmin(event)" 
+                > Login 
+            </a>
+ 
             <button type="button" class="btn btn-danger" onclick="closeForm()">
             Close
             </button>

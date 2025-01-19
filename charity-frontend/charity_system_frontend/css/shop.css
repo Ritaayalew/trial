@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 10% 100px;
+    margin: 0 3% 100px;
 }    
 .sec1 article, .sec2 article {
     margin: 10px;
     text-align: center;
-    background-color: rgb(178, 215, 227);
-    padding: 25px;
+    background-color: rgb(229, 231, 232);
+    padding: 15px 10px 0;
 }
 .List{
     display: flex;
@@ -38,6 +38,8 @@
     color: white;
     border-radius: 20%;
     font-weight: 600;
+    margin-right: 10px;
+    margin-left: auto;
   
 }
 
@@ -47,12 +49,9 @@
 }
 .icon-cart:hover{
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
  }
-.image img{
-    width: 45px; 
-    height: 50px; 
-}
+
 .cart-tab{
     position:absolute;
     overflow-y: auto;
@@ -68,14 +67,6 @@
     0px 0px 15px rgba(128, 138, 132, 0.5),
     0px 0px 25px rgba(130, 134, 132, 0.5);
     }
-.cart-tab .listCart .item{
-     display: grid;
-    grid-template-columns: 70px 150px 50px 1fr;
-    gap: 10px;
-    text-align: center;
-    align-items: center; 
-    color: rgb(8, 0, 0);
-}
 
 .quantity span{
     display: inline-block;
@@ -90,7 +81,7 @@
     background-color: transparent;
     color: aliceblue;
 }
-.item:nth-child(even){
+.cart-item:nth-child(even){
     background-color: grey;
     color: aliceblue;
 }
@@ -112,42 +103,56 @@
 }
 .cls1 ul li{
     list-style-type: none;
-    text-align: left;
+    text-align: center;
     padding-right: 70px;
 }
-.sec1 .item img{
-    width: 90%;
-    height: 150px;
-    margin: 5px 13px;
 
-}
-.sec1 .item{
-    display: block;
-}
 .sec1{
     display: flex;
     justify-content: center;
 }
 .cls1 {
     box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;    
+    border-radius: 5px;  
+    width: 260px; 
 }
 .cls1 img{
-    width: 200px;
+    width: 90%;
     height: 200px;
 }
 .cls1 .container{
     object-fit: cover;
 }
+.cart-item{
+    margin-bottom: 9px;
+}
+.cart-item .item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 
 @media (max-width: 480px) {
     .cart-tab{
         width: 90%;
-    }   
+    } 
+
 }
 
 @media (min-width: 480px) and (max-width: 800px) {
     .cart-tab{
         width: 80%;
     }
+    main .sec1{
+        margin: 0 auto;
+    }
+}
+
+.image-div{
+    object-fit: cover;
+}
+.image-div img{
+    width: 100px;
+    height: 100px;
 }
